@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64119dd241e643a45aa53130aabfccc9, type: 3}
+  m_Name: Stone Axe
+  m_EditorClassIdentifier: 
+  itemName: Stone Axe
+  itemIcon: {fileID: 21300000, guid: ad8ab2cd41d2a7849ad7f1da022b1530, type: 3}
+  isCraftable: 1
+  craftOutput: 1
+  ingredients:
+  - {fileID: 11400000, guid: 033f8b4e93f9cbd46b1784776112b0e0, type: 2}
+  - {fileID: 11400000, guid: 2e958e2ab46b68942af2c8a134c450d0, type: 2}
+  ingredientCount: 0100000003000000
+  isEfficient: 0
+  efficiencyTargetObjects: 
+  efficiency: 0
+  doesDamage: 0
+  damage: 0
+  restoresHealth: 0
+  health: 0
+  isPlaceable: 0
+  objectPrefab: {fileID: 0}
+  canHarvest: 0
+  harvestTargetObjects: 
+  harvestedItem: 
+  reducesDamage: 0
+  damagedReduced: 0
+  isWearable: 0
+  isHat: 0
+  isCookable: 0
+  secondsUntilCooked: 0
