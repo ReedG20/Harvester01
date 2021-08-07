@@ -25,10 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e18be71fd773e64793313759c3e96c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: 2e958e2ab46b68942af2c8a134c450d0, type: 2}
-  amount: 02000000
-  breakTime: 0
+  objectObject: {fileID: 11400000, guid: bfb12c1c5522d4ba99eb1cd35b128be3, type: 2}
   lastObject: {fileID: 0}
   isBroken: 0
   states:

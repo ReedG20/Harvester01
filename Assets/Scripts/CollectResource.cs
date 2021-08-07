@@ -32,20 +32,20 @@ public class CollectResource : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, rayLength))
                 {
-                    var item = hit.transform.GetComponent<Item>();
-                    if (item)
+                    var Object = hit.transform.GetComponent<Object>();
+                    if (Object)
                     {
-                        item.BreakState();
-                        if (item.isBroken == true)
+                        Object.BreakState();
+                        if (Object.isBroken == true)
                         {
-                            for (int i = 0; i < item.items.Length; i++)
+                            for (int i = 0; i < Object.objectObject.dropItem.Length; i++)
                             {
-                                inventory.AddItemToInventory(item.items[i], item.amount[i]);
+                                inventory.AddItemToInventory(Object.objectObject.dropItem[i], Object.objectObject.dropAmount[i]);
                             }
                             inventoryUIObject.GetComponent<InventoryUI>().UpdateUI();
 
                             //inventory.PrintContents();
-                            item.Destroy();
+                            Object.Destroy();
                         }
                         reload.startReload();
                     }

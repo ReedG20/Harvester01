@@ -1,11 +1,17 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Object : MonoBehaviour
 {
+    public ObjectObject objectObject;
+
+    /*
+    //Drops
     public ItemObject[] items;
     public int[] amount;
 
-    public float breakTime;
+    //Time
+    public float defaultBreakTime;
+    */
 
     public GameObject lastObject;
 
