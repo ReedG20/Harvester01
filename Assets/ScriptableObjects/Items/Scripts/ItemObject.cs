@@ -17,7 +17,7 @@ public class ItemObject : ScriptableObject, IComparable
     [Space]
     [Header("Make Efficient")]
     public bool isEfficient;
-    public string efficiencyTargetObjects;
+    public string[] efficiencyTargetObjects;
     public float efficiency;
     //Damage
     [Space]

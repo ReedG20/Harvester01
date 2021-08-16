@@ -1,15 +1,24 @@
 using UnityEngine;
+using System.Collections;
 
 public class CollectResource : MonoBehaviour
 {
     public InventoryObject inventory;
     //public GameObject player;
 
+    public InventoryUI inventoryUI;
+
     float rayLength = 2f;
 
     public GameObject inventoryUIObject;
 
     public ReloadBar reload;
+
+    bool isLoaded = true;
+
+    bool runningCoroutine = false;
+
+    float tick = 1;
 
     void Start()
     {
@@ -20,19 +29,42 @@ public class CollectResource : MonoBehaviour
 
     void Update()
     {
+        ////tick = inventoryUI.GetSelectedItem().efficiency;
+
         Vector3 rayDirection = transform.rotation * Vector3.forward * rayLength;
         Debug.DrawRay(transform.position, rayDirection);
 
         if (Input.GetKey(KeyCode.Space))
         {
-            if (reload.isLoaded)
+            //reload.isLoaded
+            if (isLoaded)
             {
+                isLoaded = false;
+
                 Ray ray = new Ray(transform.position, rayDirection);
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit, rayLength))
                 {
                     var Object = hit.transform.GetComponent<Object>();
+
+                    //Efficiency
+                    if (inventoryUI.GetSelectedItem() != null)
+                    {
+                        for (int i = 0; i < inventoryUI.GetSelectedItem().efficiencyTargetObjects.Length; i++)
+                        {
+                            if (Object.objectObject.name == inventoryUI.GetSelectedItem().efficiencyTargetObjects[i])
+                            {
+                                tick *= inventoryUI.GetSelectedItem().efficiency;
+                                return;
+                            }
+                            else
+                            {
+                                tick = 1f;
+                            }
+                        }
+                    }
+                    
                     if (Object)
                     {
                         Object.BreakState();
@@ -47,9 +79,13 @@ public class CollectResource : MonoBehaviour
                             //inventory.PrintContents();
                             Object.Destroy();
                         }
-                        reload.startReload();
+                        //reload.startReload();
                     }
                 }
+            }
+            else if (!runningCoroutine)
+            {
+                StartCoroutine(Tick());
             }
         }
         /*
@@ -58,6 +94,16 @@ public class CollectResource : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
             FindObjectOfType<AudioManager>().Stop("Mining01");
         */
+    }
+
+    IEnumerator Tick()
+    {
+        runningCoroutine = true;
+
+        yield return new WaitForSeconds(tick);
+
+        isLoaded = true;
+        runningCoroutine = false;
     }
 
     private void OnApplicationQuit()

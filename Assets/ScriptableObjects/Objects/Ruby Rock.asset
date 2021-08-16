@@ -15,4 +15,4 @@ MonoBehaviour:
   dropItem:
   - {fileID: 0}
   dropAmount: 00000000
-  objectHealth: 0
+  objectHealth: 2

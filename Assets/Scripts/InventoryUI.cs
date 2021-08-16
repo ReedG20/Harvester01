@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour
 
     int inventorySlotsAmount = 72;
 
-    int hotbarSlotsAmount = 6;
+    //int hotbarSlotsAmount = 6;
 
     public GameObject inventorySlotsParent;
 
@@ -148,6 +148,8 @@ public class InventoryUI : MonoBehaviour
                 hotbarSlots[i].ClearSlot();
             }
         }
+
+        //inventory.PrintContents();
     }
 
     public void GetSelectedInventorySlot()
@@ -207,38 +209,58 @@ public class InventoryUI : MonoBehaviour
 
     public void ItemToHotbar()
     {
+        //Hotbar item is succesfully going to inventory, but inventory item is increasing when going to hotbar
+
+        //Store inventory item as newItem
         ItemObject newItem = inventory.GetInventoryItemAt(selectedInventorySlot);
 
         if (newItem == null)
             return;
 
+        //Store inventory amount as newAmount
         int newAmount = inventory.GetInventoryAmountAt(selectedInventorySlot);
+        //Debug.Log("newAmount = " + newAmount);
 
-        InventorySlot tempItem;
+        //Undefined InventorySlot
+        //InventorySlot tempItem;
+        ItemObject tempItem;
+        int tempAmount;
 
         // If there is an item in the desired hotbar slot
         if (hotbarSlots[selectedHotbarSlot].item != null)
         {
             //tempItem = hotbar item
-            tempItem = new InventorySlot(hotbarSlots[selectedHotbarSlot].item, hotbarSlots[selectedHotbarSlot].amount);
+            //tempItem = new InventorySlot(hotbarSlots[selectedHotbarSlot].item, hotbarSlots[selectedHotbarSlot].amount);
+            tempItem = hotbarSlots[selectedHotbarSlot].item;
+            tempAmount = hotbarSlots[selectedHotbarSlot].amount;
             //Debug.Log(tempItem);
 
             //Add inventory item to hotbar
-            inventory.AddItemToHotbarAt(selectedHotbarSlot, newItem, newAmount);
-            //Remove selected inventory item
-            inventory.AddItemToInventoryAt(selectedInventorySlot, newItem, -newAmount);
+            inventory.SetHotbarItemAt(selectedHotbarSlot, newItem, newAmount);
 
             //Add temp hotbar item to inventory
-            inventory.AddItemToInventoryAt(selectedInventorySlot, tempItem.GetItem(), tempItem.GetAmount());
+            inventory.SetInventoryItemAt(selectedInventorySlot, tempItem, tempAmount);
         }
         else
         {
             //Add inventory item to hotbar
-            inventory.AddItemToHotbarAt(selectedHotbarSlot, newItem, newAmount);
+            inventory.SetHotbarItemAt(selectedHotbarSlot, newItem, newAmount);
 
             //Remove selected inventory item
             inventory.AddItemToInventoryAt(selectedInventorySlot, newItem, -newAmount);
         }
         UpdateUI();
+    }
+
+    //Functions return selected item and amount
+
+    public ItemObject GetSelectedItem()
+    {
+        return inventory.GetHotbarItemAt(selectedHotbarSlot);
+    }
+    
+    public int GetSelectedAmount()
+    {
+        return inventory.GetHotbarAmountAt(selectedHotbarSlot);
     }
 }

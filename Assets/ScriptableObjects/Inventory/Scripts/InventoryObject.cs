@@ -70,12 +70,24 @@ public class InventoryObject : ScriptableObject
     // Add item at
     public void AddItemToInventoryAt(int i, ItemObject item, int amount)
     {
+        if ((amount + inventory[i].GetAmount()) <= 0)
+        {
+            inventory[i].ClearInventorySlot();
+            return;
+        }
+
         inventory[i].SetItem(item);
         inventory[i].SetAmount(amount + GetInventoryAmountAt(i));
     }
 
     public void AddItemToHotbarAt(int i, ItemObject item, int amount)
     {
+        if ((amount + hotbar[i].GetAmount()) <= 0)
+        {
+            hotbar[i].ClearInventorySlot();
+            return;
+        }
+
         hotbar[i].SetItem(item);
         hotbar[i].SetAmount(amount + GetHotbarAmountAt(i));
     }

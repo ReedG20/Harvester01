@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ReloadBar : MonoBehaviour
 {
+    /*
     public Slider reloadBar;
 
     int maxValue = 100;
@@ -64,4 +65,5 @@ public class ReloadBar : MonoBehaviour
             yield return reloadTick;
         }
     }
+    */
 }
