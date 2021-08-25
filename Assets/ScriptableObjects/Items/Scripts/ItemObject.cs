@@ -6,46 +6,46 @@ public class ItemObject : ScriptableObject, IComparable
 {
     public string itemName;
     public Sprite itemIcon;
-    //Craft
+    // Craft
     [Space]
     [Header("Craft")]
     public bool isCraftable;
     public int craftOutput = 1;
     public ItemObject[] ingredients;
     public int[] ingredientCount;
-    //Efficiency
+    // Efficiency
     [Space]
     [Header("Make Efficient")]
     public bool isEfficient;
-    public string[] efficiencyTargetObjects;
-    public float efficiency;
-    //Damage
+    public ObjectObject[] efficiencyTargetObjects;
+    public float toolEfficiencyMultiplier;
+    // Damage
     [Space]
     [Header("Damage")]
     public bool doesDamage;
     public float damage;
-    //Health
+    // Health
     [Space]
     [Header("Heal")]
     public bool restoresHealth;
     public float health;
-    //Place
+    // Place
     [Space]
     [Header("Place")]
     public bool isPlaceable;
     public GameObject objectPrefab;
-    //Harvest
+    // Harvest
     [Space]
     [Header("Harvest")]
     public bool canHarvest;
     public string harvestTargetObjects;
     public string harvestedItem;
-    //Reduce Damage
+    // Reduce Damage
     [Space]
     [Header("Reduce Damage")]
     public bool reducesDamage;
     public float damagedReduced;
-    //Wear
+    // Wear
     [Space]
     [Header("Wear")]
     public bool isWearable;

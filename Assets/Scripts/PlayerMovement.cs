@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(direction * speed * Time.deltaTime);
         }
 
-        //Dashing
+        // Dashing
 
         if (dashNumber >= dashWait)
         {
@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // Dashing
         if (isDashing)
         {
             dashPeriodNum = dashPeriodNum + Time.deltaTime;

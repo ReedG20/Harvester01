@@ -2,16 +2,12 @@ using UnityEngine;
 
 public class Object : MonoBehaviour
 {
-    public ObjectObject objectObject;
-
     /*
-    //Drops
-    public ItemObject[] items;
-    public int[] amount;
-
-    //Time
-    public float defaultBreakTime;
+    The Object class sits on the gameobject
+    and holds that gameobject's ObjectObject
     */
+
+    public ObjectObject objectObject;
 
     public GameObject lastObject;
 

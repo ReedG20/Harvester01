@@ -14,10 +14,9 @@ public class Crafting : MonoBehaviour
 
     public DisplayCraftingPanel displayCrafting;
 
+    // Checking possible crafts
     public void UpdateCrafts()
     {
-        //Debug.Log("UpdateCrafts()");
-
         craftableItems.Clear();
 
         // Check each item
@@ -47,7 +46,7 @@ public class Crafting : MonoBehaviour
                                     // Now check if we have the correct quantity
                                     if (inventory.GetInventoryAmountAt(k) >= allItems[i].ingredientCount[j])
                                     {
-                                        //We now know that we have the correct quantity of the item
+                                        // We now know that we have the correct quantity of the item
                                         ingredientsInInventory++;
                                     }
                                 }
@@ -78,6 +77,7 @@ public class Crafting : MonoBehaviour
         {
             inventory.AddItemToInventory(item.ingredients[i], -item.ingredientCount[i]);
         }
+
         inventory.AddItemToInventory(item, item.craftOutput);
         inventoryUI.UpdateUI();
         UpdateCrafts();

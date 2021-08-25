@@ -4,6 +4,12 @@ using TMPro;
 
 public class SlotManager : MonoBehaviour
 {
+    /*
+    SlotManager is used to change visual
+    elements of each inventory/hotbar
+    slot from other classes
+    */
+
     public ItemObject item;
     public int amount;
 

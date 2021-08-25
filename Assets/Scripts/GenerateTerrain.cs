@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GenerateTerrain : MonoBehaviour
 {
-    //Prefabs
+    // Prefabs
     public GameObject ground_grass01;
     public GameObject ground_grass02;
 
@@ -27,14 +27,16 @@ public class GenerateTerrain : MonoBehaviour
 
     float currentSample;
 
-    //Larger = more detail
+    Vector3 defaultRotation = new Vector3(-90f, 0f, 0f);
+
+    // Larger = more detail
     float noiseScale = 0.111f;
     float scale = 2;
 
-    //^2 is amount of tiles
+    // ^2 is amount of tiles
     float size = 100f;
 
-    //Higher = less
+    // Higher = less
     float grassCutoff = 0.32f;
     float darkGrassCutoff = 0.05f;
     float rockCutoff = 0.65f;
@@ -42,100 +44,140 @@ public class GenerateTerrain : MonoBehaviour
     float darkTreeCutoff = 0.7f;
     float redGroundCutoff = 0.5f;
 
-    float randomPosition;
+    float randomPosition01;
     float randomPosition02;
     float randomPosition03;
 
+    int _i;
+    int _j;
+
     void Start()
     {
-        randomPosition = Random.Range(-1000, 1000);
+        randomPosition01 = Random.Range(-1000, 1000);
         randomPosition02 = Random.Range(-1000, 1000);
         randomPosition03 = Random.Range(-1000, 1000);
         CreateTerrain();
     }
 
-    public void CreateTerrain()
+    /*
+    void CreateTerrain()
     {
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                if (Mathf.PerlinNoise((i + randomPosition) * noiseScale, (j + randomPosition) * noiseScale) >= grassCutoff)
-                {
-                    //Land
-                    if (Mathf.PerlinNoise((i + randomPosition03) * noiseScale, (j + randomPosition03) * noiseScale) >= rockCutoff)
-                    {
-                        //Rock base
-                        Instantiate(ground_rock01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                GenerateTile(GetBiome())
+            }
+        }
+    }
 
-                        //Rock
-                        if (Mathf.PerlinNoise((i + randomPosition03) * noiseScale, (j + randomPosition03) * noiseScale) >= (rockCutoff + ((1f - rockCutoff) / 6f) * 5f))
+    int GetBiome(int i, int j)
+    {
+        
+    }
+
+    void GenerateTile(int biome)
+    {
+
+    }
+    */
+
+    void CreateTerrain()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            _i = i;
+            for (int j = 0; j < size; j++)
+            {
+                _j = j;
+                if (GenerateBool(randomPosition01, grassCutoff))
+                {
+                    // Land
+                    if (GenerateBool(randomPosition03, rockCutoff))
+                    {
+                        // Rock base
+                        InstantiateObject(ground_rock01, defaultRotation);
+
+                        // Rock
+                        if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 5f)))
                         {
-                            Instantiate(rock_rock_01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(rock_rock_01, defaultRotation);
                         }
-                        else if (Mathf.PerlinNoise((i + randomPosition03) * noiseScale, (j + randomPosition03) * noiseScale) >= (rockCutoff + ((1f - rockCutoff) / 6f) * 4f))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 4f)))
                         {
-                            Instantiate(rock_rock00, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(rock_rock00, defaultRotation);
                         }
-                        else if (Mathf.PerlinNoise((i + randomPosition03) * noiseScale, (j + randomPosition03) * noiseScale) >= (rockCutoff + ((1f - rockCutoff) / 6f) * 3f))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 3f)))
                         {
-                            Instantiate(rock_rock01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(rock_rock01, defaultRotation);
                         }
-                        else if (Mathf.PerlinNoise((i + randomPosition03) * noiseScale, (j + randomPosition03) * noiseScale) >= (rockCutoff + ((1f - rockCutoff) / 6f) * 2f))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 2f)))
                         {
-                            Instantiate(rock_rock02, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(rock_rock02, defaultRotation);
                         }
-                        else if (Mathf.PerlinNoise((i + randomPosition03) * noiseScale, (j + randomPosition03) * noiseScale) >= (rockCutoff + ((1f - rockCutoff) / 6f)))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f))))
                         {
-                            Instantiate(rock_rock03, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(rock_rock03, defaultRotation);
                         }
                         else
                         {
-                            Instantiate(rock_rock04, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(rock_rock04, defaultRotation);
                         }
                     }
-                    else if (Mathf.PerlinNoise((i + randomPosition02) * noiseScale, (j + randomPosition02) * noiseScale) >= treeCutoff)
+                    else if (GenerateBool(randomPosition02, treeCutoff))
                     {
-                        //Red ground
+                        // Red ground
                         if (Random.Range(0f, 1f) >= redGroundCutoff)
                         {
-                            Instantiate(ground_redDirt01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(ground_redDirt01, defaultRotation);
                         }
                         else
                         {
-                            Instantiate(ground_redDirt02, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(ground_redDirt02, defaultRotation);
                         }
 
-                        //Trees
+                        // Trees
                         if (Random.Range(0f, 1f) >= darkTreeCutoff)
                         {
-                            Instantiate(nature_tree01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, Random.Range(0f, 360f), 0f));
+                            InstantiateObject(nature_tree01, new Vector3(-90f, Random.Range(0f, 360f), 0f));
                         }
                         else
                         {
-                            Instantiate(nature_tree02, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, Random.Range(0f, 360f), 0f));
+                            InstantiateObject(nature_tree02, new Vector3(-90f, Random.Range(0f, 360f), 0f));
                         }
                     }
                     else
                     {
-                        //Grass
+                        // Grass
                         if (Random.Range(0f, 1f) >= darkGrassCutoff)
                         {
-                            Instantiate(ground_grass01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                            InstantiateObject(ground_grass01, defaultRotation);
                         }
                         else
                         {
-                            Instantiate(ground_grass02, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
-                            Instantiate(nature_grass01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 180f, 0f));
+                            InstantiateObject(ground_grass02, defaultRotation);
+                            InstantiateObject(nature_grass01, new Vector3(-90f, 180f, 0f));
                         }
                     }
                 }
                 else
                 {
-                    //Water
-                    Instantiate(ground_water01, new Vector3((i - (size / 2)) * scale, 0f, (j - (size / 2)) * scale), Quaternion.Euler(-90f, 0f, 0f));
+                    // Water
+                    InstantiateObject(ground_water01, defaultRotation);
                 }
             }
         }
+    }
+
+    // Function instantiates an object given the prefab and rotation
+    void InstantiateObject(GameObject prefab, Vector3 rotation)
+    {
+        Instantiate(prefab, new Vector3((_i - (size / 2)) * scale, 0f, (_j - (size / 2)) * scale), Quaternion.Euler(rotation));
+    }
+
+    // Generates boolean based on the perlin noise and the location of the tile
+    bool GenerateBool(float randomPosition, float cutoff)
+    {
+        return Mathf.PerlinNoise((_i + randomPosition) * noiseScale, (_j + randomPosition) * noiseScale) >= cutoff;
     }
 }

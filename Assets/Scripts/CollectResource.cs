@@ -4,7 +4,6 @@ using System.Collections;
 public class CollectResource : MonoBehaviour
 {
     public InventoryObject inventory;
-    //public GameObject player;
 
     public InventoryUI inventoryUI;
 
@@ -23,20 +22,15 @@ public class CollectResource : MonoBehaviour
     void Start()
     {
         inventoryUIObject.GetComponent<InventoryUI>().UpdateUI();
-
-        //inventory.PrintContents();
     }
 
     void Update()
     {
-        ////tick = inventoryUI.GetSelectedItem().efficiency;
-
         Vector3 rayDirection = transform.rotation * Vector3.forward * rayLength;
         Debug.DrawRay(transform.position, rayDirection);
 
         if (Input.GetKey(KeyCode.Space))
         {
-            //reload.isLoaded
             if (isLoaded)
             {
                 isLoaded = false;
@@ -46,40 +40,40 @@ public class CollectResource : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, rayLength))
                 {
-                    var Object = hit.transform.GetComponent<Object>();
+                    var hitObject = hit.transform.GetComponent<Object>();
 
-                    //Efficiency
+                    // Efficiency
                     if (inventoryUI.GetSelectedItem() != null)
                     {
                         for (int i = 0; i < inventoryUI.GetSelectedItem().efficiencyTargetObjects.Length; i++)
                         {
-                            if (Object.objectObject.name == inventoryUI.GetSelectedItem().efficiencyTargetObjects[i])
+                            tick = 1f;
+                            if (hitObject.objectObject == inventoryUI.GetSelectedItem().efficiencyTargetObjects[i])
                             {
-                                tick *= inventoryUI.GetSelectedItem().efficiency;
-                                return;
+                                tick *= inventoryUI.GetSelectedItem().toolEfficiencyMultiplier;
+                                break;
                             }
                             else
                             {
                                 tick = 1f;
                             }
                         }
+                        
                     }
                     
-                    if (Object)
+                    if (hitObject)
                     {
-                        Object.BreakState();
-                        if (Object.isBroken == true)
+                        hitObject.BreakState();
+                        if (hitObject.isBroken == true)
                         {
-                            for (int i = 0; i < Object.objectObject.dropItem.Length; i++)
+                            for (int i = 0; i < hitObject.objectObject.dropItem.Length; i++)
                             {
-                                inventory.AddItemToInventory(Object.objectObject.dropItem[i], Object.objectObject.dropAmount[i]);
+                                inventory.AddItemToInventory(hitObject.objectObject.dropItem[i], hitObject.objectObject.dropAmount[i]);
                             }
                             inventoryUIObject.GetComponent<InventoryUI>().UpdateUI();
 
-                            //inventory.PrintContents();
-                            Object.Destroy();
+                            hitObject.Destroy();
                         }
-                        //reload.startReload();
                     }
                 }
             }
@@ -88,6 +82,8 @@ public class CollectResource : MonoBehaviour
                 StartCoroutine(Tick());
             }
         }
+
+        //SFX
         /*
         if (Input.GetKeyDown(KeyCode.Space))
             FindObjectOfType<AudioManager>().Play("Mining01");

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//Inventory object class
+// Inventory object class
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
@@ -214,7 +214,7 @@ public class InventoryObject : ScriptableObject
     }
 }
 
-//inventory slot class
+// Inventory slot class
 [System.Serializable]
 public class InventorySlot
 {

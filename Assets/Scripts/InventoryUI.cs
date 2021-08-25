@@ -16,8 +16,6 @@ public class InventoryUI : MonoBehaviour
 
     int inventorySlotsAmount = 72;
 
-    //int hotbarSlotsAmount = 6;
-
     public GameObject inventorySlotsParent;
 
     public GameObject hotbarSlotsParent;
@@ -55,6 +53,7 @@ public class InventoryUI : MonoBehaviour
 
     void Update()
     {
+        // Item to hotbar
         if (inventoryIsOpen)
         {
             // Highlight slot
@@ -69,7 +68,7 @@ public class InventoryUI : MonoBehaviour
                 }
             }
 
-            // Item to hotbar
+            // If a slot is selected, run ItemToHotbar()
             if (GetSelectedHotbarSlot())
             {
                 ItemToHotbar();
@@ -209,28 +208,24 @@ public class InventoryUI : MonoBehaviour
 
     public void ItemToHotbar()
     {
-        //Hotbar item is succesfully going to inventory, but inventory item is increasing when going to hotbar
-
         //Store inventory item as newItem
         ItemObject newItem = inventory.GetInventoryItemAt(selectedInventorySlot);
 
+        /*
         if (newItem == null)
             return;
+        */
 
         //Store inventory amount as newAmount
         int newAmount = inventory.GetInventoryAmountAt(selectedInventorySlot);
         //Debug.Log("newAmount = " + newAmount);
 
-        //Undefined InventorySlot
-        //InventorySlot tempItem;
         ItemObject tempItem;
         int tempAmount;
 
         // If there is an item in the desired hotbar slot
         if (hotbarSlots[selectedHotbarSlot].item != null)
         {
-            //tempItem = hotbar item
-            //tempItem = new InventorySlot(hotbarSlots[selectedHotbarSlot].item, hotbarSlots[selectedHotbarSlot].amount);
             tempItem = hotbarSlots[selectedHotbarSlot].item;
             tempAmount = hotbarSlots[selectedHotbarSlot].amount;
             //Debug.Log(tempItem);
@@ -252,7 +247,7 @@ public class InventoryUI : MonoBehaviour
         UpdateUI();
     }
 
-    //Functions return selected item and amount
+    // Functions return selected item and amount
 
     public ItemObject GetSelectedItem()
     {
