@@ -30,7 +30,8 @@ public class GenerateTerrain : MonoBehaviour
     Vector3 defaultRotation = new Vector3(-90f, 0f, 0f);
 
     // Larger = more detail
-    float noiseScale = 0.111f;
+    float defaultNoiseScale = 0.111f;
+    float biomeNoiseScale = 0.033f;
     float scale = 2;
 
     // ^2 is amount of tiles
@@ -48,14 +49,40 @@ public class GenerateTerrain : MonoBehaviour
     float randomPosition02;
     float randomPosition03;
 
+    float randomBiomePosition01;
+    float randomBiomePosition02;
+    float randomBiomePosition03;
+
     int _i;
     int _j;
+
+    // ----Biomes----
+    // 1. Forest
+    [SerializeField]
+    int amountOfForestElements;
+    // 2. Desert
+    [SerializeField]
+    int amountOfDesertElements;
+    // 3. Mountains
+    [SerializeField]
+    int amountOfMountainsElements;
+    // 4. Ocean
+    [SerializeField]
+    int amountOfOceanElements;
+    // 5. Snowy
+    [SerializeField]
+    int amountOfSnowyElements;
 
     void Start()
     {
         randomPosition01 = Random.Range(-1000, 1000);
         randomPosition02 = Random.Range(-1000, 1000);
         randomPosition03 = Random.Range(-1000, 1000);
+
+        randomBiomePosition01 = Random.Range(-1000, 1000);
+        randomBiomePosition02 = Random.Range(-1000, 1000);
+        randomBiomePosition03 = Random.Range(-1000, 1000);
+
         CreateTerrain();
     }
 
@@ -64,24 +91,143 @@ public class GenerateTerrain : MonoBehaviour
     {
         for (int i = 0; i < size; i++)
         {
+            _i = i;
             for (int j = 0; j < size; j++)
             {
-                GenerateTile(GetBiome())
+                _j = j;
+                GenerateTile(GetBiome(i, j));
             }
         }
     }
-
-    int GetBiome(int i, int j)
-    {
-        
-    }
-
-    void GenerateTile(int biome)
-    {
-
-    }
     */
 
+    // Returns biome as a number between 1 and 5 based on the given tile
+    int GetBiome(int i, int j)
+    {
+        //1. Forest - 000, 001
+        //2. Desert - 010
+        //3. Mountains - 011
+        //4. Ocean - 100, 101
+        //5. Snowy - 110, 111
+
+        int biome;
+
+        bool b01 = false;
+        bool b02 = false;
+        bool b03 = false;
+
+        if (GenerateBool(randomBiomePosition01, 0.5f, biomeNoiseScale))
+        {
+            b01 = true;
+        }
+        if (GenerateBool(randomBiomePosition02, 0.5f, biomeNoiseScale))
+        {
+            b02 = true;
+        }
+        if (GenerateBool(randomBiomePosition03, 0.5f, biomeNoiseScale))
+        {
+            b03 = true;
+        }
+
+        // Calclating biome based on bools
+        if (b01)
+        {
+            if (b02)
+            {
+                if (b03)
+                {
+                    //111
+                    biome = 5;
+                }
+                else
+                {
+                    //110
+                    biome = 5;
+                }
+            }
+            else
+            {
+                if (b03)
+                {
+                    //101
+                    biome = 4;
+                }
+                else
+                {
+                    //100
+                    biome = 4;
+                }
+            }
+        }
+        else
+        {
+            if (b02)
+            {
+                if (b03)
+                {
+                    //011
+                    biome = 3;
+                }
+                else
+                {
+                    //010
+                    biome = 2;
+                }
+            }
+            else
+            {
+                if (b03)
+                {
+                    //001
+                    biome = 1;
+                }
+                else
+                {
+                    //000
+                    biome = 1;
+                }
+            }
+        }
+
+        return biome;
+    }
+
+    // Instatiates a tile based on the biome its in and the coordinates of the tile
+    void GenerateTile(int biome)
+    {
+        if (biome == 1)
+        {
+            // Forest
+            InstantiateObject(rock_rock01, defaultRotation);
+        }
+        else if (biome == 2)
+        {
+            // Desert
+            InstantiateObject(ground_water01, defaultRotation);
+        }
+        else if (biome == 3)
+        {
+            // Mountains
+            InstantiateObject(nature_tree01, defaultRotation);
+        }
+        else if (biome == 4)
+        {
+            // Ocean
+            InstantiateObject(nature_tree02, defaultRotation);
+        }
+        else if (biome == 5)
+        {
+            // Snowy
+            InstantiateObject(ground_redDirt01, defaultRotation);
+        }
+        else
+        {
+            Debug.LogError("Biome int not in range!");
+        }
+    }
+
+    // Old create terrain function
+    ///*
     void CreateTerrain()
     {
         for (int i = 0; i < size; i++)
@@ -90,32 +236,32 @@ public class GenerateTerrain : MonoBehaviour
             for (int j = 0; j < size; j++)
             {
                 _j = j;
-                if (GenerateBool(randomPosition01, grassCutoff))
+                if (GenerateBool(randomPosition01, grassCutoff, defaultNoiseScale))
                 {
                     // Land
-                    if (GenerateBool(randomPosition03, rockCutoff))
+                    if (GenerateBool(randomPosition03, rockCutoff, defaultNoiseScale))
                     {
                         // Rock base
                         InstantiateObject(ground_rock01, defaultRotation);
 
                         // Rock
-                        if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 5f)))
+                        if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 5f), defaultNoiseScale))
                         {
                             InstantiateObject(rock_rock_01, defaultRotation);
                         }
-                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 4f)))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 4f), defaultNoiseScale))
                         {
                             InstantiateObject(rock_rock00, defaultRotation);
                         }
-                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 3f)))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 3f), defaultNoiseScale))
                         {
                             InstantiateObject(rock_rock01, defaultRotation);
                         }
-                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 2f)))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f) * 2f), defaultNoiseScale))
                         {
                             InstantiateObject(rock_rock02, defaultRotation);
                         }
-                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f))))
+                        else if (GenerateBool(randomPosition03, (rockCutoff + ((1f - rockCutoff) / 6f)), defaultNoiseScale))
                         {
                             InstantiateObject(rock_rock03, defaultRotation);
                         }
@@ -124,7 +270,7 @@ public class GenerateTerrain : MonoBehaviour
                             InstantiateObject(rock_rock04, defaultRotation);
                         }
                     }
-                    else if (GenerateBool(randomPosition02, treeCutoff))
+                    else if (GenerateBool(randomPosition02, treeCutoff, defaultNoiseScale))
                     {
                         // Red ground
                         if (Random.Range(0f, 1f) >= redGroundCutoff)
@@ -168,6 +314,7 @@ public class GenerateTerrain : MonoBehaviour
             }
         }
     }
+    //*/
 
     // Function instantiates an object given the prefab and rotation
     void InstantiateObject(GameObject prefab, Vector3 rotation)
@@ -176,8 +323,16 @@ public class GenerateTerrain : MonoBehaviour
     }
 
     // Generates boolean based on the perlin noise and the location of the tile
-    bool GenerateBool(float randomPosition, float cutoff)
+    bool GenerateBool(float randomPosition, float cutoff, float noiseScale)
     {
+        //Higher cutoff -> less likely return true
         return Mathf.PerlinNoise((_i + randomPosition) * noiseScale, (_j + randomPosition) * noiseScale) >= cutoff;
     }
+}
+
+// Environment element class
+[System.Serializable]
+public class EnvironmentElement
+{
+    
 }
