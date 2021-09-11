@@ -57,21 +57,37 @@ public class GenerateTerrain : MonoBehaviour
     int _j;
 
     // ----Biomes----
+
+    // 01 -> Ground
+    // 02 -> Objects
+
     // 1. Forest
     [SerializeField]
-    int amountOfForestElements;
+    int amountOfForestElements01;
+    [SerializeField]
+    int amountOfForestElements02;
     // 2. Desert
     [SerializeField]
-    int amountOfDesertElements;
+    int amountOfDesertElements01;
+    [SerializeField]
+    int amountOfDesertElements02;
     // 3. Mountains
     [SerializeField]
-    int amountOfMountainsElements;
+    int amountOfMountainsElements01;
+    [SerializeField]
+    int amountOfMountainsElements02;
     // 4. Ocean
     [SerializeField]
-    int amountOfOceanElements;
+    int amountOfOceanElements01;
+    [SerializeField]
+    int amountOfOceanElements02;
     // 5. Snowy
     [SerializeField]
-    int amountOfSnowyElements;
+    int amountOfSnowyElements01;
+    [SerializeField]
+    int amountOfSnowyElements02;
+
+    // --------------
 
     void Start()
     {
@@ -99,7 +115,7 @@ public class GenerateTerrain : MonoBehaviour
             }
         }
     }
-    */
+    //*/
 
     // Returns biome as a number between 1 and 5 based on the given tile
     int GetBiome(int i, int j)
@@ -198,27 +214,28 @@ public class GenerateTerrain : MonoBehaviour
         if (biome == 1)
         {
             // Forest
+            // Generate biome tile
             InstantiateObject(rock_rock01, defaultRotation);
         }
         else if (biome == 2)
         {
             // Desert
-            InstantiateObject(ground_water01, defaultRotation);
+            //InstantiateObject(ground_water01, defaultRotation);
         }
         else if (biome == 3)
         {
             // Mountains
-            InstantiateObject(nature_tree01, defaultRotation);
+            //InstantiateObject(nature_tree01, defaultRotation);
         }
         else if (biome == 4)
         {
             // Ocean
-            InstantiateObject(nature_tree02, defaultRotation);
+            //InstantiateObject(nature_tree02, defaultRotation);
         }
         else if (biome == 5)
         {
             // Snowy
-            InstantiateObject(ground_redDirt01, defaultRotation);
+            //InstantiateObject(ground_redDirt01, defaultRotation);
         }
         else
         {
@@ -334,5 +351,5 @@ public class GenerateTerrain : MonoBehaviour
 [System.Serializable]
 public class EnvironmentElement
 {
-    
+    //public 
 }
