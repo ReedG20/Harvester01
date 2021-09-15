@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GenerateTerrain : MonoBehaviour
 {
@@ -58,34 +59,11 @@ public class GenerateTerrain : MonoBehaviour
 
     // ----Biomes----
 
-    // 01 -> Ground
-    // 02 -> Objects
-
     // 1. Forest
-    [SerializeField]
-    int amountOfForestElements01;
-    [SerializeField]
-    int amountOfForestElements02;
     // 2. Desert
-    [SerializeField]
-    int amountOfDesertElements01;
-    [SerializeField]
-    int amountOfDesertElements02;
     // 3. Mountains
-    [SerializeField]
-    int amountOfMountainsElements01;
-    [SerializeField]
-    int amountOfMountainsElements02;
     // 4. Ocean
-    [SerializeField]
-    int amountOfOceanElements01;
-    [SerializeField]
-    int amountOfOceanElements02;
     // 5. Snowy
-    [SerializeField]
-    int amountOfSnowyElements01;
-    [SerializeField]
-    int amountOfSnowyElements02;
 
     // --------------
 
@@ -102,7 +80,7 @@ public class GenerateTerrain : MonoBehaviour
         CreateTerrain();
     }
 
-    /*
+    ///*
     void CreateTerrain()
     {
         for (int i = 0; i < size; i++)
@@ -244,7 +222,7 @@ public class GenerateTerrain : MonoBehaviour
     }
 
     // Old create terrain function
-    ///*
+    /*
     void CreateTerrain()
     {
         for (int i = 0; i < size; i++)
@@ -349,7 +327,15 @@ public class GenerateTerrain : MonoBehaviour
 
 // Environment element class
 [System.Serializable]
-public class EnvironmentElement
+public class BiomeElement
 {
-    //public 
+    public GameObject prefab;
+
+    public float noiseScale;
+
+    public float noisePosition;
+
+    public float noiseCutoff;
+
+    public float randomCutoff;
 }
