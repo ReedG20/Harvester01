@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028575, g: 0.22571608, b: 0.30692452, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028533, g: 0.22571526, b: 0.3069237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4636,22 +4636,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6420ac30c5245c24694dab9b8f51115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground_grass01: {fileID: 5914917103560605377, guid: c96d7234f8119604c866f4e1752c7c95, type: 3}
-  ground_grass02: {fileID: 6567743428121111028, guid: 259e236dfd3a5a643866cf35d745fb9b, type: 3}
-  ground_redDirt01: {fileID: 3129890826865888277, guid: 9f8e0a830015c3e4fbe2139288ccd2a8, type: 3}
-  ground_redDirt02: {fileID: 3530863769711763844, guid: be7ff1c37f413bc468bd1230f548a9f6, type: 3}
-  nature_grass01: {fileID: 7564549036690061396, guid: 7ac46ed88f93e734d806b43b486f932b, type: 3}
-  rock_rock_01: {fileID: 1464180819082748533, guid: 196c3219cb4d7de4e92a4ce2cf3d9ed6, type: 3}
-  rock_rock00: {fileID: 4206921931885322469, guid: 3b8394fcc05ab704884b573173676d48, type: 3}
-  rock_rock01: {fileID: 2368435358117804086, guid: aee530a3c7e199b468cee66a5f7255a3, type: 3}
-  rock_rock02: {fileID: 5802289795719268120, guid: 84a48b311a857b8469eae7955dbd96ce, type: 3}
-  rock_rock03: {fileID: 2491255348039822235, guid: 907902ab4276417408942441943db4b7, type: 3}
-  rock_rock04: {fileID: 6007509488900732135, guid: 2eaaddc120f60b248806cf37f9fd4be7, type: 3}
-  ground_rock01: {fileID: 2872195120773144396, guid: a4959273c5a31da498df7c52d3a0c36f, type: 3}
-  ground_water01: {fileID: 2212982514816612000, guid: 521dec506873d854b8aede24de53ebaa, type: 3}
-  nature_tree01: {fileID: 9150311670952732, guid: 81e6a0cab5a765549b88aa49b02bf976, type: 3}
-  nature_tree02: {fileID: 2229069770824841851, guid: e8d0c0807cab2f54b8ca1d83d1ccc566, type: 3}
-  biomes: []
+  biomes:
+  - biomeName: Forest
+    biomeElements:
+    - prefab: {fileID: 5914917103560605377, guid: c96d7234f8119604c866f4e1752c7c95, type: 3}
+      isGroundElement: 1
+      noiseScale: 1
+      noisePosition: 1000
+      noiseCutoff: 0
+      randomCutoff: 0
+    - prefab: {fileID: 2229069770824841851, guid: e8d0c0807cab2f54b8ca1d83d1ccc566, type: 3}
+      isGroundElement: 0
+      noiseScale: 1
+      noisePosition: 1000
+      noiseCutoff: 0
+      randomCutoff: 0.4
+  - biomeName: Ocean
+    biomeElements:
+    - prefab: {fileID: 919132149155446097, guid: dd5b5b60fd680804690c6e3e53b70e98, type: 3}
+      isGroundElement: 1
+      noiseScale: 1
+      noisePosition: 0
+      noiseCutoff: 0
+      randomCutoff: 0
   randomNums: []
 --- !u!4 &560155930
 Transform:
@@ -10670,7 +10677,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0710479, y: 1}
+    m_SensorSize: {x: 0.41025642, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
