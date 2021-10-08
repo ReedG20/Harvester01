@@ -4647,13 +4647,21 @@ MonoBehaviour:
       randomCutoff: 0
     - prefab: {fileID: 2229069770824841851, guid: e8d0c0807cab2f54b8ca1d83d1ccc566, type: 3}
       isGroundElement: 0
-      noiseScale: 1
-      noisePosition: 1000
-      noiseCutoff: 0
-      randomCutoff: 0.4
+      noiseScale: 0.1
+      noisePosition: 500
+      noiseCutoff: 0.5
+      randomCutoff: 0
   - biomeName: Ocean
     biomeElements:
     - prefab: {fileID: 919132149155446097, guid: dd5b5b60fd680804690c6e3e53b70e98, type: 3}
+      isGroundElement: 1
+      noiseScale: 1
+      noisePosition: 0
+      noiseCutoff: 0
+      randomCutoff: 0
+  - biomeName: Desert
+    biomeElements:
+    - prefab: {fileID: 3129890826865888277, guid: 9f8e0a830015c3e4fbe2139288ccd2a8, type: 3}
       isGroundElement: 1
       noiseScale: 1
       noisePosition: 0
