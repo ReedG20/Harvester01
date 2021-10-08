@@ -36,7 +36,7 @@ public class GenerateTerrain : MonoBehaviour
     // --------------
 
     public Biome[] biomes;
-    public float[] randomNums;
+    float[] randomNums;
 
     float biomeNoiseScale = 0.0511f;
 
