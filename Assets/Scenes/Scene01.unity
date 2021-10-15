@@ -4639,60 +4639,60 @@ MonoBehaviour:
   biomes:
   - biomeName: Forest
     biomeElements:
-    - prefab: {fileID: 2872195120773144396, guid: a4959273c5a31da498df7c52d3a0c36f, type: 3}
+    - prefab: {fileID: 919132149155446097, guid: 9736a4bd9bae6bd4fb6d880daaf0225e, type: 3}
       isGroundElement: 1
       noiseScale: 0.1
-      noisePosition: 1000
+      noisePosition: 0
       noiseCutoff: 0.7
       randomCutoff: 0
-    - prefab: {fileID: 3530863769711763844, guid: be7ff1c37f413bc468bd1230f548a9f6, type: 3}
+    - prefab: {fileID: 919132149155446097, guid: 6978dc9bb8a6ee3408320ad6393fb259, type: 3}
       isGroundElement: 1
       noiseScale: 0.1
       noisePosition: 500
-      noiseCutoff: 0.5
+      noiseCutoff: 0.6
       randomCutoff: 0.5
-    - prefab: {fileID: 3129890826865888277, guid: 9f8e0a830015c3e4fbe2139288ccd2a8, type: 3}
+    - prefab: {fileID: 919132149155446097, guid: 2747bfb8b7cc39e478792ae7149df1a7, type: 3}
       isGroundElement: 1
       noiseScale: 0.1
       noisePosition: 500
-      noiseCutoff: 0.5
+      noiseCutoff: 0.6
       randomCutoff: 0
-    - prefab: {fileID: 6567743428121111028, guid: 259e236dfd3a5a643866cf35d745fb9b, type: 3}
+    - prefab: {fileID: 919132149155446097, guid: 1887c0fcb3a148546abcaa24e4d0c087, type: 3}
       isGroundElement: 1
       noiseScale: 0.1
-      noisePosition: -100
+      noisePosition: 0
       noiseCutoff: 0
-      randomCutoff: 0.9
-    - prefab: {fileID: 5914917103560605377, guid: c96d7234f8119604c866f4e1752c7c95, type: 3}
+      randomCutoff: 0.95
+    - prefab: {fileID: 919132149155446097, guid: bcab55a7ddf54bc45a3dc13904d8f0de, type: 3}
       isGroundElement: 1
       noiseScale: 0.1
-      noisePosition: -100
+      noisePosition: 0
       noiseCutoff: 0
       randomCutoff: 0
   - biomeName: Desert
     biomeElements:
-    - prefab: {fileID: 6567743428121111028, guid: 259e236dfd3a5a643866cf35d745fb9b, type: 3}
+    - prefab: {fileID: 919132149155446097, guid: 531b639d4fd17874ca33174460cea79d, type: 3}
       isGroundElement: 1
-      noiseScale: 1
+      noiseScale: 0.1
+      noisePosition: 0
+      noiseCutoff: 0.6
+      randomCutoff: 0
+    - prefab: {fileID: 919132149155446097, guid: a0d1b892ea110614da11716c2ed8d3e8, type: 3}
+      isGroundElement: 1
+      noiseScale: 0.1
       noisePosition: 0
       noiseCutoff: 0
       randomCutoff: 0
   - biomeName: Ocean
     biomeElements:
-    - prefab: {fileID: 2212982514816612000, guid: 521dec506873d854b8aede24de53ebaa, type: 3}
-      isGroundElement: 1
-      noiseScale: 1
+    - prefab: {fileID: 919132149155446097, guid: dd5b5b60fd680804690c6e3e53b70e98, type: 3}
+      isGroundElement: 0
+      noiseScale: 0
       noisePosition: 0
       noiseCutoff: 0
       randomCutoff: 0
   - biomeName: Snowy Forest
-    biomeElements:
-    - prefab: {fileID: 3530863769711763844, guid: be7ff1c37f413bc468bd1230f548a9f6, type: 3}
-      isGroundElement: 1
-      noiseScale: 1
-      noisePosition: 0
-      noiseCutoff: 0
-      randomCutoff: 0
+    biomeElements: []
 --- !u!4 &560155930
 Transform:
   m_ObjectHideFlags: 0
