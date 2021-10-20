@@ -9,31 +9,13 @@ public class GenerateTerrain : MonoBehaviour
     Vector3 defaultRotation = new Vector3(-90f, 0f, 0f);
 
     // Larger = more detail
-    float scale = 2;
+    public float scale;
 
     // ^2 is amount of tiles
-    float size = 100f;
-
-    float randomPosition01;
-    float randomPosition02;
-    float randomPosition03;
-
-    float randomBiomePosition01;
-    float randomBiomePosition02;
-    float randomBiomePosition03;
+    public int size;
 
     int _x;
     int _y;
-
-    // ----Biomes----
-
-    // 1. Forest
-    // 2. Desert
-    // 3. Mountains
-    // 4. Ocean
-    // 5. Snowy
-
-    // --------------
 
     public Biome[] biomes;
     float[] randomNums;
@@ -42,14 +24,6 @@ public class GenerateTerrain : MonoBehaviour
 
     void Start()
     {
-        randomPosition01 = Random.Range(-1000, 1000);
-        randomPosition02 = Random.Range(-1000, 1000);
-        randomPosition03 = Random.Range(-1000, 1000);
-
-        randomBiomePosition01 = Random.Range(-1000, 1000);
-        randomBiomePosition02 = Random.Range(-1000, 1000);
-        randomBiomePosition03 = Random.Range(-1000, 1000);
-
         randomNums = new float[biomes.Length];
 
         CreateTerrain();

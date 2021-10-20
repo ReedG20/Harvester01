@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64119dd241e643a45aa53130aabfccc9, type: 3}
-  m_Name: Arrow
+  m_Name: arrow
   m_EditorClassIdentifier: 
   itemName: Arrow
   itemIcon: {fileID: 21300000, guid: 1214157306b92184a8356cbd1c95b5c3, type: 3}

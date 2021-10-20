@@ -9,7 +9,7 @@ public class Object : MonoBehaviour
 
     public ObjectObject objectObject;
 
-    public GameObject lastObject;
+    GameObject lastObject;
 
     public bool isBroken;
 

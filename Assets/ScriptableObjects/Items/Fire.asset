@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64119dd241e643a45aa53130aabfccc9, type: 3}
-  m_Name: Fire
+  m_Name: fire
   m_EditorClassIdentifier: 
   itemName: 
   itemIcon: {fileID: 0}

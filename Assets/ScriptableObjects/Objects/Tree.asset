@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
-  m_Name: Tree
+  m_Name: tree
   m_EditorClassIdentifier: 
   dropItem:
   - {fileID: 11400000, guid: 5b5987c5559d5a64fade1ae518c65de2, type: 2}
