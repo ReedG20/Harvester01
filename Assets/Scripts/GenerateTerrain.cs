@@ -2,25 +2,22 @@ using UnityEngine;
 
 public class GenerateTerrain : MonoBehaviour
 {
-    // Prefabs
-
-    float currentSample;
 
     Vector3 defaultRotation = new Vector3(-90f, 0f, 0f);
 
-    // Larger = more detail
-    public float scale;
+    float scale = 2;
 
     // ^2 is amount of tiles
     public int size;
+    
+    // Higher = more detail (default: 5f)
+    public float biomeNoiseScale;
 
     int _x;
     int _y;
 
     public Biome[] biomes;
     float[] randomNums;
-
-    float biomeNoiseScale = 0.0511f;
 
     void Start()
     {
@@ -50,7 +47,7 @@ public class GenerateTerrain : MonoBehaviour
 
                 for (int i = 0; i < biomes.Length; i++)
                 {
-                    float currentValue = Mathf.PerlinNoise((x + randomNums[i]) * biomeNoiseScale, y * biomeNoiseScale);
+                    float currentValue = Mathf.PerlinNoise((x + randomNums[i]) * biomeNoiseScale, y * biomeNoiseScale) + biomes[i].noisePriority;
 
                     if (value < currentValue)
                     {
@@ -68,31 +65,40 @@ public class GenerateTerrain : MonoBehaviour
 
     void CreateBiomeTile(int x, int y, int biome)
     {
-        // Not sure if this works
+        // Ground elements
         for (int i = 0; i < biomes[biome].biomeElements.Length; i++)
         {
             if (biomes[biome].biomeElements[i].isGroundElement)
             {
                 if (Mathf.PerlinNoise((x + biomes[biome].biomeElements[i].noisePosition) * biomes[biome].biomeElements[i].noiseScale, y * biomes[biome].biomeElements[i].noiseScale) >= biomes[biome].biomeElements[i].noiseCutoff)
                 {
+                    Random.seed = (biomes[biome].biomeElements[i].randomSeed + 1) * (_x + 100) * (_y + 100);
                     if (Random.Range(0f, 1f) >= biomes[biome].biomeElements[i].randomCutoff)
                     {
-                        Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                        if (biomes[biome].biomeElements[i].hasCustomRotation)
+                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
+                        else
+                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                         break;
                     }
                 }
             }
         }
 
+        // Objects
         for (int i = 0; i < biomes[biome].biomeElements.Length; i++)
         {
             if (!biomes[biome].biomeElements[i].isGroundElement)
             {
                 if (Mathf.PerlinNoise((x + biomes[biome].biomeElements[i].noisePosition) * biomes[biome].biomeElements[i].noiseScale, y * biomes[biome].biomeElements[i].noiseScale) >= biomes[biome].biomeElements[i].noiseCutoff)
                 {
+                    Random.seed = (biomes[biome].biomeElements[i].randomSeed + 1) * (_x + 100) * (_y + 100);
                     if (Random.Range(0f, 1f) >= biomes[biome].biomeElements[i].randomCutoff)
                     {
-                        Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                        if (biomes[biome].biomeElements[i].hasCustomRotation)
+                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
+                        else
+                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                         break;
                     }
                 }
@@ -107,6 +113,8 @@ public class Biome
 {
     public string biomeName;
 
+    public float noisePriority;
+
     public BiomeElement[] biomeElements;
 }
 
@@ -116,6 +124,10 @@ public class BiomeElement
 {
     public GameObject prefab;
 
+    public bool hasCustomRotation;
+
+    public Vector3 customRotation;
+
     public bool isGroundElement;
 
     // Higher = less
@@ -124,6 +136,8 @@ public class BiomeElement
     public float noisePosition;
 
     public float noiseCutoff;
+
+    public int randomSeed;
 
     public float randomCutoff;
 }
