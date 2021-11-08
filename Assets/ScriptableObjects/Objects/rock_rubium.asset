@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
   m_Name: rock_rubium
   m_EditorClassIdentifier: 
+  objectName: Rubium Rock
   dropItem:
-  - {fileID: 0}
-  dropAmount: 00000000
-  objectHealth: 2
+  - {fileID: 11400000, guid: ea8db9b7cebc44e19916937309b0e83b, type: 2}
+  dropAmount: 02000000
+  objectEfficiencyMultiplier: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: pickaxe_stone
   m_EditorClassIdentifier: 
   itemName: Stone Pickaxe
-  itemIcon: {fileID: 21300000, guid: 618930d9b52c45b43b6c0e9f800f5c46, type: 3}
+  itemIcon: {fileID: 21300000, guid: 4ac29eef6bad9d447b46538e5012a6a7, type: 3}
   isCraftable: 1
   craftOutput: 1
   ingredients:

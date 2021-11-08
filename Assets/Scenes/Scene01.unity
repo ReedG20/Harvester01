@@ -4642,6 +4642,24 @@ MonoBehaviour:
   - biomeName: Forest
     noisePriority: 0
     biomeElements:
+    - prefab: {fileID: 1097522146230925658, guid: 46ddf5e7a228eb44584ba882b59cff3d, type: 3}
+      hasCustomRotation: 0
+      customRotation: {x: 0, y: 0, z: 0}
+      isGroundElement: 0
+      noiseScale: 0.1
+      noisePosition: 0
+      noiseCutoff: 0.6
+      randomSeed: 0
+      randomCutoff: 0.97
+    - prefab: {fileID: 5746768971517406741, guid: c4c75a70874b0ce478e35ad2a8e6d8a9, type: 3}
+      hasCustomRotation: 0
+      customRotation: {x: 0, y: 0, z: 0}
+      isGroundElement: 0
+      noiseScale: 0.1
+      noisePosition: 0
+      noiseCutoff: 0.6
+      randomSeed: 2
+      randomCutoff: 0.97
     - prefab: {fileID: 8790145480989213264, guid: d6ddfef4323d2bf49af0c63c9dd0dba3, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
@@ -10064,30 +10082,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allItems:
   - {fileID: 11400000, guid: ffe2ac53066825847ac9924a177fc72e, type: 2}
+  - {fileID: 11400000, guid: 96bc5ddc6d2e6864c8d53381900779e6, type: 2}
+  - {fileID: 11400000, guid: 81fb490f9c9ae440a8643f7058722351, type: 2}
+  - {fileID: 11400000, guid: 2baf6202ddb6f2144a24cc6a98d0404e, type: 2}
+  - {fileID: 11400000, guid: c49c8164a4e674c469051b26410dd50a, type: 2}
+  - {fileID: 11400000, guid: d3fd38f03e409411793c2d5c9e5117cf, type: 2}
   - {fileID: 11400000, guid: 90ce25595842e6f47ad3e853db055746, type: 2}
+  - {fileID: 11400000, guid: b1147a26e2a704f9d9807fb27cf93bb2, type: 2}
   - {fileID: 11400000, guid: 49775dbe6948ed847a0467b33d88968d, type: 2}
+  - {fileID: 11400000, guid: d8e12989fd6124ea4b78689bec7953a5, type: 2}
+  - {fileID: 11400000, guid: 2cff53f48f33145cbb776129ea77397b, type: 2}
+  - {fileID: 11400000, guid: 725a76bdb93034fc2b7f047b9dce599c, type: 2}
+  - {fileID: 11400000, guid: 5d29fb21e319b4bceadc3f0da0df3486, type: 2}
   - {fileID: 11400000, guid: cd57088b7d62e4d4daaf560d3f9c8745, type: 2}
   - {fileID: 11400000, guid: 00b879daac076db41936e4345d3b620c, type: 2}
-  - {fileID: 11400000, guid: 2f4aecde04bcf994ab34d5f8867f49b3, type: 2}
-  - {fileID: 11400000, guid: 599b86d40181bb24a8a784d9dd5939b0, type: 2}
+  - {fileID: 11400000, guid: 3964492b87ed040978d30b1a238285a3, type: 2}
+  - {fileID: 11400000, guid: 69de5192ad4b24e66ac712fc00f8d8e2, type: 2}
   - {fileID: 11400000, guid: 0e36b9134ae6b2c45b427c04b5a45bf3, type: 2}
   - {fileID: 11400000, guid: 8adb52c87ce89364eaa2c8e446216536, type: 2}
+  - {fileID: 11400000, guid: 7c0a75c69b2844f8fab29a9b749606b3, type: 2}
   - {fileID: 11400000, guid: 08f494bb6ba32e14a8c37ba4a55017cd, type: 2}
-  - {fileID: 11400000, guid: 96bc5ddc6d2e6864c8d53381900779e6, type: 2}
-  - {fileID: 11400000, guid: 10096323c7bca7e41a5a7ef0c873b6e7, type: 2}
-  - {fileID: 11400000, guid: 6322317ceeb22ee47a0f60e9ee634771, type: 2}
+  - {fileID: 11400000, guid: 2f4aecde04bcf994ab34d5f8867f49b3, type: 2}
+  - {fileID: 11400000, guid: c5e866c8cdfe54c369772d2f45054869, type: 2}
+  - {fileID: 11400000, guid: 7443594d08da844848a9912b1794230f, type: 2}
+  - {fileID: 11400000, guid: a0bb1cfaad28c47fe9ac919ad81a2554, type: 2}
+  - {fileID: 11400000, guid: 164ba3a8f3bf34a698a28c4983a1bd15, type: 2}
+  - {fileID: 11400000, guid: 52c74de2d93204bff97a3ff051405f3b, type: 2}
+  - {fileID: 11400000, guid: 923b3293acf8547a7bd85f02556a2b69, type: 2}
+  - {fileID: 11400000, guid: c1e97058fc2d34226af6d9ad5cb01c6f, type: 2}
   - {fileID: 11400000, guid: 8226f04e10b3c1f4bab414acfd77418b, type: 2}
+  - {fileID: 11400000, guid: 35350ae6f85b24dccb8e7c716e55d322, type: 2}
   - {fileID: 11400000, guid: ac3b42f8c1bb16041aa90205432ffc3f, type: 2}
   - {fileID: 11400000, guid: 5b5987c5559d5a64fade1ae518c65de2, type: 2}
   - {fileID: 11400000, guid: 34085d09599ecf546b3eb60a45dcd473, type: 2}
+  - {fileID: 11400000, guid: 599b86d40181bb24a8a784d9dd5939b0, type: 2}
+  - {fileID: 11400000, guid: 10096323c7bca7e41a5a7ef0c873b6e7, type: 2}
+  - {fileID: 11400000, guid: 6f469c6b042794948bca6b0b5002b840, type: 2}
+  - {fileID: 11400000, guid: f8eeb417971014e4a9468c574e96af1f, type: 2}
+  - {fileID: 11400000, guid: a5c7880be11b44cb2b1c36841849a6ca, type: 2}
+  - {fileID: 11400000, guid: b7b7b32c79b8a4137bfc1f90bcc9fcab, type: 2}
+  - {fileID: 11400000, guid: 0c6225d9f072f43b5ad5131b04aca87b, type: 2}
+  - {fileID: 11400000, guid: b20dc76951f5b4c6eae84e2cf5224b12, type: 2}
+  - {fileID: 11400000, guid: 902c32c1021f64a8c9e67016f5388061, type: 2}
+  - {fileID: 11400000, guid: 8c47b6fc192bc462a9e3c172b3847893, type: 2}
+  - {fileID: 11400000, guid: d1bf5a1f77c9b4fc199d81ad89edd4d0, type: 2}
+  - {fileID: 11400000, guid: 2eb1ee3c3e2284e4ab4d41cc9d127572, type: 2}
+  - {fileID: 11400000, guid: 400378e8b41cb48c38f632e7f0617d97, type: 2}
+  - {fileID: 11400000, guid: ea8db9b7cebc44e19916937309b0e83b, type: 2}
   - {fileID: 11400000, guid: a3598308d42f04348ba1c250aa7dff4c, type: 2}
   - {fileID: 11400000, guid: 6727cc4f9c3fd17448be6846d2ea3f40, type: 2}
   - {fileID: 11400000, guid: 033f8b4e93f9cbd46b1784776112b0e0, type: 2}
-  - {fileID: 11400000, guid: 2baf6202ddb6f2144a24cc6a98d0404e, type: 2}
-  - {fileID: 11400000, guid: f8eeb417971014e4a9468c574e96af1f, type: 2}
-  - {fileID: 11400000, guid: 5757699bfd1fdca42a5398a3ff4325b1, type: 2}
   - {fileID: 11400000, guid: 2e958e2ab46b68942af2c8a134c450d0, type: 2}
+  - {fileID: 11400000, guid: 6322317ceeb22ee47a0f60e9ee634771, type: 2}
+  - {fileID: 11400000, guid: 24ba71bea91df44759342f8d841b3eba, type: 2}
+  - {fileID: 11400000, guid: 5757699bfd1fdca42a5398a3ff4325b1, type: 2}
+  - {fileID: 11400000, guid: fecd847eecf4e4085bd7371edd98a7e1, type: 2}
+  - {fileID: 11400000, guid: accbfbe7e4fa44fb8b6e368b88873c45, type: 2}
+  - {fileID: 11400000, guid: 51d483f6448954031bdc621adcb9015d, type: 2}
+  - {fileID: 11400000, guid: 49c45e055280c4d279b96db93f5558e5, type: 2}
+  - {fileID: 11400000, guid: 37c76bcde1b0345cea38c3e802f6b957, type: 2}
   - {fileID: 11400000, guid: deca501f551dc34428c319b47f1b40f8, type: 2}
+  - {fileID: 11400000, guid: fa89d516b8212410092121a214c3bc0b, type: 2}
+  - {fileID: 11400000, guid: 4a6aa2cf57feadb4ea80ed39a70b03c2, type: 2}
   craftableItems: []
   test: []
   inventory: {fileID: 11400000, guid: 7a95fc4a47ac4ed4680e8e10e2833f89, type: 2}
@@ -10848,7 +10904,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4547069, y: 1}
+    m_SensorSize: {x: 1.2834467, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

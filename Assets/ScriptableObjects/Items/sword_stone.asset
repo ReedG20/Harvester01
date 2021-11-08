@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sword_stone
   m_EditorClassIdentifier: 
   itemName: Stone Sword
-  itemIcon: {fileID: 21300000, guid: 90a5e6997d22d4a48aee91eae63a6efb, type: 3}
+  itemIcon: {fileID: 21300000, guid: c1d6c44684ec26b4da3611eb8b350491, type: 3}
   isCraftable: 1
   craftOutput: 1
   ingredients:

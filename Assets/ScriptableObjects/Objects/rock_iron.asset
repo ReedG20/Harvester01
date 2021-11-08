@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
   m_Name: rock_iron
   m_EditorClassIdentifier: 
-  dropItem: []
-  dropAmount: 
-  objectHealth: 1.5
+  objectName: Iron Rock
+  dropItem:
+  - {fileID: 11400000, guid: 8226f04e10b3c1f4bab414acfd77418b, type: 2}
+  dropAmount: 02000000
+  objectEfficiencyMultiplier: 0

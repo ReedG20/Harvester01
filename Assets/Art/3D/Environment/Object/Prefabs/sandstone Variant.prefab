@@ -27,7 +27,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectObject: {fileID: 11400000, guid: c479cf0a0176c441ea3f37cc1b11f03a, type: 2}
   isBroken: 0
-  states: []
+  states:
+  - {fileID: 0}
+  - {fileID: 3336834954019187851, guid: 6fd95bda2387b364a870ec60d7e8fa83, type: 3}
+  - {fileID: 4103307490958936800, guid: c2f5ee1a3bd8bc84eaf201a29f0d6d7c, type: 3}
   state: 0
 --- !u!1001 &5940594151659243510
 PrefabInstance:
