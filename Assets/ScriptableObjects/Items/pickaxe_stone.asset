@@ -19,10 +19,11 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 033f8b4e93f9cbd46b1784776112b0e0, type: 2}
   - {fileID: 11400000, guid: 2e958e2ab46b68942af2c8a134c450d0, type: 2}
-  ingredientCount: 0100000003000000
+  ingredientCount: 0300000003000000
   isEfficient: 1
   efficiencyTargetObjects:
   - {fileID: 11400000, guid: bfb12c1c5522d4ba99eb1cd35b128be3, type: 2}
+  - {fileID: 11400000, guid: c479cf0a0176c441ea3f37cc1b11f03a, type: 2}
   toolEfficiencyMultiplier: 0.5
   doesDamage: 0
   damage: 0

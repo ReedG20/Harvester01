@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
-  m_Name: fire
+  m_Name: Fire
   m_EditorClassIdentifier: 
+  objectName: 
   dropItem: []
   dropAmount: 
-  objectHealth: 0
+  objectEfficiencyMultiplier: 0

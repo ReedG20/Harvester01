@@ -19,6 +19,10 @@ public class CollectResource : MonoBehaviour
 
     float tick = 1;
 
+    // Debugging
+    public ItemObject[] debugItems;
+    public int[] debugAmounts;
+
     void Start()
     {
         inventoryUIObject.GetComponent<InventoryUI>().UpdateUI();
@@ -90,6 +94,15 @@ public class CollectResource : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
             FindObjectOfType<AudioManager>().Stop("Mining01");
         */
+
+        // Debugging
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            for (int i = 0; i < debugItems.Length; i++)
+            {
+                inventory.AddItemToInventory(debugItems[i], debugAmounts[i]);
+            }
+        }
     }
 
     IEnumerator Tick()

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64119dd241e643a45aa53130aabfccc9, type: 3}
-  m_Name: forge
+  m_Name: Forge
   m_EditorClassIdentifier: 
   itemName: Forge
   itemIcon: {fileID: 21300000, guid: 7ebdb46b4d831ec4aa4435eda6842dfd, type: 3}

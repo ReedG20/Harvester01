@@ -14,13 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wood Sword
   itemIcon: {fileID: 21300000, guid: 9d474bb03b17229438e03b19c140992c, type: 3}
-  isCraftable: 0
+  isCraftable: 1
   craftOutput: 1
-  ingredients: []
-  ingredientCount: 
-  isEfficient: 0
-  efficiencyTargetObjects: []
-  toolEfficiencyMultiplier: 0
+  ingredients:
+  - {fileID: 11400000, guid: 033f8b4e93f9cbd46b1784776112b0e0, type: 2}
+  - {fileID: 11400000, guid: deca501f551dc34428c319b47f1b40f8, type: 2}
+  ingredientCount: 0300000003000000
+  isEfficient: 1
+  efficiencyTargetObjects:
+  - {fileID: 11400000, guid: d530d2251eeea480b927fb3d92a60ec5, type: 2}
+  toolEfficiencyMultiplier: 0.75
   doesDamage: 0
   damage: 0
   restoresHealth: 0

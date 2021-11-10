@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
-  m_Name: tree
+  m_Name: Tree
   m_EditorClassIdentifier: 
+  objectName: 
   dropItem:
   - {fileID: 11400000, guid: 5b5987c5559d5a64fade1ae518c65de2, type: 2}
   - {fileID: 11400000, guid: 033f8b4e93f9cbd46b1784776112b0e0, type: 2}
   dropAmount: 0200000001000000
-  objectHealth: 1
+  objectEfficiencyMultiplier: 0
