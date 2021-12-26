@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectObject : ScriptableObject
 {
     public string objectName;
+    public GameObject[] prefab;
     // Drops
     [Space]
     public ItemObject[] dropItem;

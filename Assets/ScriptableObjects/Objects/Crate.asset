@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
   m_Name: Crate
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: Crate
+  prefab: []
   dropItem: []
   dropAmount: 
   objectEfficiencyMultiplier: 0

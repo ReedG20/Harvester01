@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GenerateTerrain : MonoBehaviour
 {
+    [SerializeField]
+    WorldObject world;
 
     Vector3 defaultRotation = new Vector3(-90f, 0f, 0f);
 
@@ -61,6 +63,8 @@ public class GenerateTerrain : MonoBehaviour
                 CreateBiomeTile(x, y, valueIndex);
             }
         }
+
+        InstantiateWorld();
     }
 
     void CreateBiomeTile(int x, int y, int biome)
@@ -76,9 +80,11 @@ public class GenerateTerrain : MonoBehaviour
                     if (Random.Range(0f, 1f) >= biomes[biome].biomeElements[i].randomCutoff)
                     {
                         if (biomes[biome].biomeElements[i].hasCustomRotation)
-                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
+                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                            //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
                         else
-                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                            //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                         break;
                     }
                 }
@@ -96,12 +102,25 @@ public class GenerateTerrain : MonoBehaviour
                     if (Random.Range(0f, 1f) >= biomes[biome].biomeElements[i].randomCutoff)
                     {
                         if (biomes[biome].biomeElements[i].hasCustomRotation)
-                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
+                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                            //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
                         else
-                            Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                            //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                         break;
                     }
                 }
+            }
+        }
+    }
+
+    void InstantiateWorld()
+    {
+        for (int x = 0; x < world.GetDictionaryLength(); x++)
+        {
+            for (int y = 0; y < world.GetDictionaryLength(); y++)
+            {
+                // TEMPORARY Instantiate(world.GetObject(x, y).prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
             }
         }
     }
@@ -122,6 +141,7 @@ public class Biome
 [System.Serializable]
 public class BiomeElement
 {
+    public ObjectObject objectObject;
     public GameObject prefab;
 
     public bool hasCustomRotation;

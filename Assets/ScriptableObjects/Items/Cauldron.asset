@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cauldron
   itemIcon: {fileID: 21300000, guid: 3d3f126d3f0be6c498ca88d2b18a470f, type: 3}
-  isCraftable: 0
+  isCraftable: 1
   craftOutput: 1
-  ingredients: []
-  ingredientCount: 
+  ingredients:
+  - {fileID: 11400000, guid: 8226f04e10b3c1f4bab414acfd77418b, type: 2}
+  ingredientCount: 01000000
   isEfficient: 0
   efficiencyTargetObjects: []
   toolEfficiencyMultiplier: 0
@@ -25,8 +26,8 @@ MonoBehaviour:
   damage: 0
   restoresHealth: 0
   health: 0
-  isPlaceable: 0
-  objectPrefab: {fileID: 0}
+  isPlaceable: 1
+  objectPrefab: {fileID: 1883497659748274171, guid: 877ad93ca47f9874f8cb010bedfc73c7, type: 3}
   canHarvest: 0
   harvestTargetObjects: 
   harvestedItem: 

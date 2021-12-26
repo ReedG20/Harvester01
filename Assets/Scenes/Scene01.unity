@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028533, g: 0.22571526, b: 0.3069237, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028575, g: 0.22571608, b: 0.30692452, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3179,6 +3179,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ce1a4340e6e71439cae63079cf1da4, type: 3}
+--- !u!1 &399914614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399914615}
+  m_Layer: 0
+  m_Name: Ray02Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399914615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399914614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311829710}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &402346254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bcab55a7ddf54bc45a3dc13904d8f0de, type: 3}
@@ -9092,7 +9122,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209440306}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -9996,6 +10026,7 @@ GameObject:
   - component: {fileID: 1311829708}
   - component: {fileID: 1311829711}
   - component: {fileID: 1311829712}
+  - component: {fileID: 1311829713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10049,6 +10080,7 @@ Transform:
   - {fileID: 642856224}
   - {fileID: 1665500210}
   - {fileID: 543464258}
+  - {fileID: 399914615}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10151,6 +10183,21 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 7a95fc4a47ac4ed4680e8e10e2833f89, type: 2}
   inventoryUI: {fileID: 1176636247}
   displayCrafting: {fileID: 1314999379}
+--- !u!114 &1311829713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311829707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8112a320bf04c145af1e3c5db1de084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 7a95fc4a47ac4ed4680e8e10e2833f89, type: 2}
+  inventoryUI: {fileID: 1176636247}
+  ray02Transform: {fileID: 399914615}
 --- !u!1001 &1312566654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10906,7 +10953,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1424581, y: 1}
+    m_SensorSize: {x: 1.4458259, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
