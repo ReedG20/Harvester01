@@ -4,19 +4,24 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Object", menuName = "Inventory System/Object")]
 public class ObjectObject : ScriptableObject
 {
-    public string objectName;
-    public GameObject[] prefab;
-    // Drops
-    [Space]
-    public ItemObject[] dropItem;
-    public int[] dropAmount;
-    [Space]
+    // All variants of the object
+    public Variant[] variants;
     // Health
     public float objectEfficiencyMultiplier;
 
     public int CompareTo(object a)
     {
         ItemObject other = a as ItemObject;
-        return other.itemName.CompareTo(this.objectName);
+        return other.itemName.CompareTo(this.variants[0].name);
     }
+}
+
+// Variant class
+[System.Serializable]
+public class Variant
+{
+    public string name;
+    public GameObject[] states;
+    public ItemObject[] dropItem;
+    public int[] dropAmount;
 }

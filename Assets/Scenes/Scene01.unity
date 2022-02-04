@@ -4666,13 +4666,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6420ac30c5245c24694dab9b8f51115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  world: {fileID: 11400000, guid: f248f725886b54d469ce232caaf8a301, type: 2}
   size: 100
   biomeNoiseScale: 0.0311
   biomes:
   - biomeName: Forest
     noisePriority: 0
     biomeElements:
-    - prefab: {fileID: 1097522146230925658, guid: 46ddf5e7a228eb44584ba882b59cff3d, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 1097522146230925658, guid: 46ddf5e7a228eb44584ba882b59cff3d, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4681,7 +4684,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 0
       randomCutoff: 0.97
-    - prefab: {fileID: 5746768971517406741, guid: c4c75a70874b0ce478e35ad2a8e6d8a9, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 5746768971517406741, guid: c4c75a70874b0ce478e35ad2a8e6d8a9, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4690,7 +4695,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 2
       randomCutoff: 0.97
-    - prefab: {fileID: 8790145480989213264, guid: d6ddfef4323d2bf49af0c63c9dd0dba3, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 8790145480989213264, guid: d6ddfef4323d2bf49af0c63c9dd0dba3, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4699,7 +4706,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 1391437415338721591, guid: f319766a9e8ac684b965c5f235a5bce6, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 1391437415338721591, guid: f319766a9e8ac684b965c5f235a5bce6, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4708,7 +4717,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 8408009673429408819, guid: 8c18b5544501c104f88b0b581728e49f, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 8408009673429408819, guid: 8c18b5544501c104f88b0b581728e49f, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4717,7 +4728,9 @@ MonoBehaviour:
       noiseCutoff: 0.5
       randomSeed: 4
       randomCutoff: 0.5
-    - prefab: {fileID: 7192015241063402401, guid: b98d9996d30b3834093fa61ad237ef68, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 7192015241063402401, guid: b98d9996d30b3834093fa61ad237ef68, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4726,7 +4739,9 @@ MonoBehaviour:
       noiseCutoff: 0.5
       randomSeed: 4
       randomCutoff: 0.5
-    - prefab: {fileID: 1013076181645327887, guid: 4d9a98f684996a044a0dc811ce0ba039, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 1013076181645327887, guid: 4d9a98f684996a044a0dc811ce0ba039, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4735,7 +4750,9 @@ MonoBehaviour:
       noiseCutoff: 0.5
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 6985673718679903141, guid: 8836401a7c02275449bc4e194bfc25b2, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 6985673718679903141, guid: 8836401a7c02275449bc4e194bfc25b2, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4744,7 +4761,9 @@ MonoBehaviour:
       noiseCutoff: 0.5
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 5633292217834994583, guid: 843ae3e98bc554d44a3abe274b800095, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 5633292217834994583, guid: 843ae3e98bc554d44a3abe274b800095, type: 3}
       hasCustomRotation: 1
       customRotation: {x: -90, y: 180, z: 0}
       isGroundElement: 0
@@ -4753,7 +4772,9 @@ MonoBehaviour:
       noiseCutoff: 0
       randomSeed: 2
       randomCutoff: 0.95
-    - prefab: {fileID: 2483173333483096034, guid: c0f0c0e1b78b99a408e2d2e93ae4767e, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 2483173333483096034, guid: c0f0c0e1b78b99a408e2d2e93ae4767e, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4762,7 +4783,9 @@ MonoBehaviour:
       noiseCutoff: 0
       randomSeed: 2
       randomCutoff: 0.95
-    - prefab: {fileID: 259379665041686123, guid: 27387a3776ee0d24cb1d2c341b796143, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 259379665041686123, guid: 27387a3776ee0d24cb1d2c341b796143, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4774,7 +4797,9 @@ MonoBehaviour:
   - biomeName: Snowy Forest
     noisePriority: -0.15
     biomeElements:
-    - prefab: {fileID: 6499896464303049088, guid: 5e44da289533899488a7a2554f05f1cc, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 6499896464303049088, guid: 5e44da289533899488a7a2554f05f1cc, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4783,7 +4808,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 1391437415338721591, guid: f319766a9e8ac684b965c5f235a5bce6, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 1391437415338721591, guid: f319766a9e8ac684b965c5f235a5bce6, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4792,7 +4819,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 2195584191359679182, guid: 7a63f8a3063fce843a8e7df0b532dccc, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 2195584191359679182, guid: 7a63f8a3063fce843a8e7df0b532dccc, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4801,7 +4830,9 @@ MonoBehaviour:
       noiseCutoff: 0.5
       randomSeed: 0
       randomCutoff: 0.3
-    - prefab: {fileID: 2073093475460777717, guid: 1953642e2960d7242a82988d9bc824f2, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 2073093475460777717, guid: 1953642e2960d7242a82988d9bc824f2, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4810,7 +4841,9 @@ MonoBehaviour:
       noiseCutoff: 0.5
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 831945310389233877, guid: c902d48939dc94e43ae47cd8c6b5f7e7, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 831945310389233877, guid: c902d48939dc94e43ae47cd8c6b5f7e7, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4819,7 +4852,9 @@ MonoBehaviour:
       noiseCutoff: 0
       randomSeed: 0
       randomCutoff: 0.97
-    - prefab: {fileID: 8189596008879805269, guid: 34736057f2d3c8841b7e12a3f6f92f94, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 8189596008879805269, guid: 34736057f2d3c8841b7e12a3f6f92f94, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4831,7 +4866,9 @@ MonoBehaviour:
   - biomeName: Desert
     noisePriority: -0.15
     biomeElements:
-    - prefab: {fileID: 6823044943509240487, guid: 454e433a962c574409707d970aa56fbf, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 6823044943509240487, guid: 454e433a962c574409707d970aa56fbf, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4840,7 +4877,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 3851583511649334297, guid: cdf9707855115e0478bb1a488c96af2a, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 3851583511649334297, guid: cdf9707855115e0478bb1a488c96af2a, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4849,7 +4888,9 @@ MonoBehaviour:
       noiseCutoff: 0.6
       randomSeed: 0
       randomCutoff: 0
-    - prefab: {fileID: 7341265080174847037, guid: b1c9083ea7a539d45a744b39940d0e3b, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 7341265080174847037, guid: b1c9083ea7a539d45a744b39940d0e3b, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -4858,7 +4899,9 @@ MonoBehaviour:
       noiseCutoff: 0
       randomSeed: 0
       randomCutoff: 0.97
-    - prefab: {fileID: 5659847064575279087, guid: 7dbc15aaaea27f149840174fe048675a, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 5659847064575279087, guid: 7dbc15aaaea27f149840174fe048675a, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 1
@@ -4870,7 +4913,9 @@ MonoBehaviour:
   - biomeName: Ocean
     noisePriority: -0.05
     biomeElements:
-    - prefab: {fileID: 2702022313532035502, guid: 7d237f5bef43db14e944e7ac570ed6f4, type: 3}
+    - objectObject: {fileID: 0}
+      variation: 0
+      prefab: {fileID: 2702022313532035502, guid: 7d237f5bef43db14e944e7ac570ed6f4, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
       isGroundElement: 0
@@ -10953,7 +10998,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4458259, y: 1}
+    m_SensorSize: {x: 0.76554173, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

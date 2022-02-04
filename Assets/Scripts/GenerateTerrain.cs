@@ -142,6 +142,9 @@ public class Biome
 public class BiomeElement
 {
     public ObjectObject objectObject;
+    public int variation;
+
+    // Need to get rid of
     public GameObject prefab;
 
     public bool hasCustomRotation;
