@@ -68,16 +68,18 @@ public class CollectResource : MonoBehaviour
                     if (hitObject)
                     {
                         hitObject.BreakState();
+                        
                         if (hitObject.isBroken == true)
                         {
-                            for (int i = 0; i < hitObject.objectObject.dropItem.Length; i++)
+                            for (int i = 0; i < hitObject.objectObject.variants[hitObject.objectObject.variant].dropItem.Length; i++)
                             {
-                                inventory.AddItemToInventory(hitObject.objectObject.dropItem[i], hitObject.objectObject.dropAmount[i]);
+                                inventory.AddItemToInventory(hitObject.objectObject.variants[hitObject.objectObject.variant].dropItem[i], hitObject.objectObject.variants[hitObject.objectObject.variant].dropAmount[i]);
                             }
                             inventoryUIObject.GetComponent<InventoryUI>().UpdateUI();
 
                             hitObject.Destroy();
                         }
+                        
                     }
                 }
             }

@@ -6,6 +6,8 @@ public class ObjectObject : ScriptableObject
 {
     // All variants of the object
     public Variant[] variants;
+    // unsure
+    public int variant;
     // Health
     public float objectEfficiencyMultiplier;
 
