@@ -6,7 +6,7 @@ public class ObjectObject : ScriptableObject
 {
     // All variants of the object
     public Variant[] variants;
-    // unsure
+    // So that we know which variant it is after it's been intantiated
     public int variant;
     // Health
     public float objectEfficiencyMultiplier;
@@ -23,6 +23,7 @@ public class ObjectObject : ScriptableObject
 public class Variant
 {
     public string name;
+    // Prefabs
     public GameObject[] states;
     public ItemObject[] dropItem;
     public int[] dropAmount;
