@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbdf2b7c18f0abf43a4ece22671ce690, type: 3}
-  m_Name: tree
+  m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
+  m_Name: tree_01
   m_EditorClassIdentifier: 
-  typeName: 
-  dropItem: []
-  dropAmount: 
-  objectEfficiencyMultiplier: 0
+  name: 
+  states: []
+  type: {fileID: 0}

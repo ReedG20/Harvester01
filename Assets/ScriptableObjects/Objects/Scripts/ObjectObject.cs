@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Object", menuName = "Inventory System/Object")]
+[CreateAssetMenu(fileName = "New Object", menuName = "Object")]
 public class ObjectObject : ScriptableObject
 {
     public string name; // e.g., "Snowy Tree"
     // Prefabs
     public GameObject[] states;
 
-    public ObjectType type; // e.g., ObjectType("Tree")
+    public ObjectTypeObject type; // e.g., ObjectType("Tree")
 
     public int CompareTo(object a)
     {
@@ -16,3 +16,5 @@ public class ObjectObject : ScriptableObject
         return other.name.CompareTo(this.name);
     }
 }
+
+//[CreateAssetMenu(fileName = "New Object", menuName = "Object System/Object")]

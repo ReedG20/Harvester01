@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New ObjectType", menuName = "Inventory System/ObjectType")]
-public class ObjectType : ScriptableObject
+[CreateAssetMenu(fileName = "New ObjectType", menuName = "Object System/ObjectType")]
+public class ObjectTypeObject : ScriptableObject
 {
     public string typeName; // e.g., "Tree"
     public ItemObject[] dropItem;

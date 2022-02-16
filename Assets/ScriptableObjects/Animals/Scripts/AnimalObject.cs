@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Animal", menuName = "Inventory System/Animal")]
+[CreateAssetMenu(fileName = "New Animal", menuName = "Animal System/Animal")]
 public class AnimalObject : ScriptableObject
 {
     //Health
