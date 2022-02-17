@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: bush_snowy
   m_EditorClassIdentifier: 
   name: 
-  states: []
+  states:
+  - {fileID: 919132149155446097, guid: 0d7fe9097f0494640a337a4f426591d7, type: 3}
   type: {fileID: 11400000, guid: fadcdfb4ce59f413fad0dad173456f91, type: 2}

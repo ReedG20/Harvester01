@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: cauldron
   m_EditorClassIdentifier: 
   name: 
-  states: []
+  states:
+  - {fileID: 919132149155446097, guid: e8e0e0f07b2d166419ab54e28463f229, type: 3}
   type: {fileID: 11400000, guid: ae00c833cafa3462fa38ee58bead2126, type: 2}

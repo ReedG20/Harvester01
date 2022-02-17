@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
-  m_Name: rock_ruubium
+  m_Name: ground_rock
   m_EditorClassIdentifier: 
   name: 
-  states: []
-  type: {fileID: 0}
+  states:
+  - {fileID: 919132149155446097, guid: 9736a4bd9bae6bd4fb6d880daaf0225e, type: 3}
+  type: {fileID: 11400000, guid: eb297711b0aee4c0e9eace5bbceb0585, type: 2}

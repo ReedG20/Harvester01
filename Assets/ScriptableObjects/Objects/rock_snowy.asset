@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: rock_snowy
   m_EditorClassIdentifier: 
   name: 
-  states: []
-  type: {fileID: 0}
+  states:
+  - {fileID: 919132149155446097, guid: 47c8c1c49899a2f44b37b09448a9581e, type: 3}
+  type: {fileID: 11400000, guid: acc7dcc2bc20c49968a8343f04eb925a, type: 2}

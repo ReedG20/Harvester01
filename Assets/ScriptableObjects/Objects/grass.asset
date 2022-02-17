@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: grass
   m_EditorClassIdentifier: 
   name: 
-  states: []
+  states:
+  - {fileID: 919132149155446097, guid: 23094cf29001e7944b64f7642bfcc70a, type: 3}
   type: {fileID: 11400000, guid: 1d55915c387bd4ed8b27efab30b5a035, type: 2}

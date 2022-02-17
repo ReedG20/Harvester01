@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
-  m_Name: bush
+  m_Name: ground_light_green
   m_EditorClassIdentifier: 
   name: 
   states:
-  - {fileID: 919132149155446097, guid: fc7084d3ac5f7a14ab754a2b09d4b7d2, type: 3}
-  type: {fileID: 11400000, guid: fadcdfb4ce59f413fad0dad173456f91, type: 2}
+  - {fileID: 919132149155446097, guid: 1887c0fcb3a148546abcaa24e4d0c087, type: 3}
+  type: {fileID: 11400000, guid: eb297711b0aee4c0e9eace5bbceb0585, type: 2}

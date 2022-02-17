@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: tree_snowy_01
   m_EditorClassIdentifier: 
   name: 
-  states: []
-  type: {fileID: 0}
+  states:
+  - {fileID: 919132149155446097, guid: 8431344d1c4e0104cb14bd5da2de488e, type: 3}
+  type: {fileID: 11400000, guid: a2f89d5aa6cb77b469da610afdc42574, type: 2}

@@ -69,6 +69,7 @@ public class GenerateTerrain : MonoBehaviour
 
     void CreateBiomeTile(int x, int y, int biome)
     {
+        //*
         // Ground elements
         for (int i = 0; i < biomes[biome].biomeElements.Length; i++)
         {
@@ -87,10 +88,13 @@ public class GenerateTerrain : MonoBehaviour
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                         break;
                     }
+                    Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + "in the " + biomes[biome].biomeName + " biome");
                 }
             }
         }
+        //*/
 
+        //*
         // Objects
         for (int i = 0; i < biomes[biome].biomeElements.Length; i++)
         {
@@ -108,10 +112,12 @@ public class GenerateTerrain : MonoBehaviour
                             world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                         break;
+                        Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + "in the " + biomes[biome].biomeName + " biome");
                     }
                 }
             }
         }
+        //*/
     }
 
     void InstantiateWorld()
@@ -120,7 +126,8 @@ public class GenerateTerrain : MonoBehaviour
         {
             for (int y = 0; y < world.GetDictionaryLength(); y++)
             {
-                // TEMPORARY Instantiate(world.GetObject(x, y).prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                // TEMPORARY
+                //Instantiate(world.GetObject(x, y).states[0], new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
             }
         }
     }
