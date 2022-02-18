@@ -94,7 +94,7 @@ public class GenerateTerrain : MonoBehaviour
         }
         //*/
 
-        //*
+        /*
         // Objects
         for (int i = 0; i < biomes[biome].biomeElements.Length; i++)
         {
