@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028575, g: 0.22571608, b: 0.30692452, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028533, g: 0.22571526, b: 0.3069237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3183,7 +3183,7 @@ MonoBehaviour:
       prefab: {fileID: 2702022313532035502, guid: 7d237f5bef43db14e944e7ac570ed6f4, type: 3}
       hasCustomRotation: 0
       customRotation: {x: 0, y: 0, z: 0}
-      isGroundElement: 0
+      isGroundElement: 1
       noiseScale: 0
       noisePosition: 0
       noiseCutoff: 0
@@ -5344,7 +5344,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209440306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -6841,7 +6841,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.83472806, y: 1}
+    m_SensorSize: {x: 0.6884058, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

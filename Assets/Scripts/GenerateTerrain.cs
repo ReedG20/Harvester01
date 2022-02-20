@@ -60,6 +60,8 @@ public class GenerateTerrain : MonoBehaviour
 
                 // We know the coords of the tile, as well as which biome it is
 
+                //Debug.Log(x + " " + y);
+                //coords are accurate here
                 CreateBiomeTile(x, y, valueIndex);
             }
         }
@@ -77,24 +79,29 @@ public class GenerateTerrain : MonoBehaviour
             {
                 if (Mathf.PerlinNoise((x + biomes[biome].biomeElements[i].noisePosition) * biomes[biome].biomeElements[i].noiseScale, y * biomes[biome].biomeElements[i].noiseScale) >= biomes[biome].biomeElements[i].noiseCutoff)
                 {
-                    Random.seed = (biomes[biome].biomeElements[i].randomSeed + 1) * (_x + 100) * (_y + 100);
+                    Random.seed = (biomes[biome].biomeElements[i].randomSeed + 1) * (x + 100) * (y + 100);
                     if (Random.Range(0f, 1f) >= biomes[biome].biomeElements[i].randomCutoff)
                     {
                         if (biomes[biome].biomeElements[i].hasCustomRotation)
-                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                        {
+                            world.AddGround(new Vector2(x, y), biomes[biome].biomeElements[i].objectObject);
+                            //Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + " in the " + biomes[biome].biomeName + " biome");
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
+                        }
                         else
-                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                        {
+                            world.AddGround(new Vector2(x, y), biomes[biome].biomeElements[i].objectObject);
+                            //Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + " in the " + biomes[biome].biomeName + " biome");
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                        }
                         break;
                     }
-                    Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + "in the " + biomes[biome].biomeName + " biome");
                 }
             }
         }
         //*/
 
-        /*
+        //*
         // Objects
         for (int i = 0; i < biomes[biome].biomeElements.Length; i++)
         {
@@ -106,13 +113,13 @@ public class GenerateTerrain : MonoBehaviour
                     if (Random.Range(0f, 1f) >= biomes[biome].biomeElements[i].randomCutoff)
                     {
                         if (biomes[biome].biomeElements[i].hasCustomRotation)
-                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                            world.AddObject(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
                         else
-                            world.Add(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
+                            world.AddObject(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                         break;
-                        Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + "in the " + biomes[biome].biomeName + " biome");
+                        Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + " in the " + biomes[biome].biomeName + " biome");
                     }
                 }
             }
@@ -122,14 +129,24 @@ public class GenerateTerrain : MonoBehaviour
 
     void InstantiateWorld()
     {
-        for (int x = 0; x < world.GetDictionaryLength(); x++)
+        //Debug.Log("dictionary length" + world.GetDictionaryLength());
+        //Debug.Log("At 0, 0 is: " + world.GetObject(0, 0));
+        //Instantiate(world.GetObject(0, 0).states[0], new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+
+        //*
+        for (int x = 0; x < world.GetGroundDictionaryLength(); x++)
         {
-            for (int y = 0; y < world.GetDictionaryLength(); y++)
+            for (int y = 0; y < world.GetGroundDictionaryLength(); y++)
             {
                 // TEMPORARY
-                //Instantiate(world.GetObject(x, y).states[0], new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                if (world.ValueAtKeyGround(x, y))
+                    Instantiate(world.GetGround(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+
+                if (world.ValueAtKeyObject(x, y))
+                    Instantiate(world.GetObject(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
             }
         }
+        //*/
     }
 }
 

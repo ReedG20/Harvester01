@@ -7,25 +7,66 @@ using UnityEngine;
 public class WorldObject : ScriptableObject
 {
     // by inputing a Vector2, you have access to that tile/object
-    Dictionary<Vector2, ObjectObject> world = new Dictionary<Vector2, ObjectObject>();
-    
-    public void Add(Vector2 vector2, ObjectObject objectObject)
+    Dictionary<Vector2, ObjectObject> worldGround = new Dictionary<Vector2, ObjectObject>();
+    Dictionary<Vector2, ObjectObject> worldObject = new Dictionary<Vector2, ObjectObject>();
+
+    // Add
+
+    public void AddGround(Vector2 vector2, ObjectObject objectObject)
     {
-        world.Add(vector2, objectObject);
+        worldGround.Add(vector2, objectObject);
     }
 
-    public void Change(Vector2 vector2, ObjectObject objectObject)
+    public void AddObject(Vector2 vector2, ObjectObject objectObject)
     {
-        world[vector2] = objectObject;
+        worldObject.Add(vector2, objectObject);
+    }
+
+    // Change
+
+    public void ChangeGround(Vector2 vector2, ObjectObject objectObject)
+    {
+        worldGround[vector2] = objectObject;
+    }
+
+    public void ChangeObject(Vector2 vector2, ObjectObject objectObject)
+    {
+        worldObject[vector2] = objectObject;
+    }
+
+    // Get
+
+    public ObjectObject GetGround(int x, int y)
+    {
+        return worldGround[new Vector2(x, y)];
     }
 
     public ObjectObject GetObject(int x, int y)
     {
-        return world[new Vector2(x, y)];
+        return worldObject[new Vector2(x, y)];
     }
 
-    public int GetDictionaryLength()
+    // Get Dictionary Length
+
+    public int GetGroundDictionaryLength()
     {
-        return world.Count;
+        return worldGround.Count;
+    }
+
+    public int GetObjectDictionaryLength()
+    {
+        return worldObject.Count;
+    }
+
+    // Value at Key
+
+    public bool ValueAtKeyGround(int x, int y)
+    {
+        return worldGround.TryGetValue(new Vector2(x, y), out _);
+    }
+
+    public bool ValueAtKeyObject(int x, int y)
+    {
+        return worldObject.TryGetValue(new Vector2(x, y), out _);
     }
 }
