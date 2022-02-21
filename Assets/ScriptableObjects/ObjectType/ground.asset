@@ -15,4 +15,5 @@ MonoBehaviour:
   typeName: 
   dropItem: []
   dropAmount: 
+  collider: 1
   objectEfficiencyMultiplier: 0

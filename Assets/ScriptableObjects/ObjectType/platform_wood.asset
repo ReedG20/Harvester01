@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: platform_wood
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: b7b7b32c79b8a4137bfc1f90bcc9fcab, type: 2}
+  dropAmount: 01000000
+  collider: 0
   objectEfficiencyMultiplier: 0

@@ -15,6 +15,7 @@ public class GenerateTerrain : MonoBehaviour
     // Higher = more detail (default: 5f)
     public float biomeNoiseScale;
 
+    public GameObject groundTemplate;
     public GameObject objectTemplate;
 
     int _x;
@@ -35,7 +36,7 @@ public class GenerateTerrain : MonoBehaviour
         for (int i = 0; i < biomes.Length; i++)
         {
             // Out of range
-            randomNums[i] = Random.Range(-1000f, 1000f);
+            randomNums[i] = Random.Range(-1000f, 2000f);
         }
 
         for (int x = 0; x < size; x++)
@@ -149,13 +150,22 @@ public class GenerateTerrain : MonoBehaviour
                 // TEMPORARY
                 if (world.ValueAtKeyGround(x, y))
                 {
-                    Instantiate(world.GetGround(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                    //Instantiate(world.GetGround(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+
+                    temp1 = Instantiate(world.GetGround(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                    temp2 = Instantiate(groundTemplate, new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(Vector3.zero));
+                    temp1.transform.parent = temp2.transform;
+                    temp2.GetComponent<Object>().objectObject = world.GetGround(x, y);
+                    temp2.GetComponent<Object>().coordinates = new Vector2(x, y);
+                    temp2.name = temp1.name;
                 }
 
                 if (world.ValueAtKeyObject(x, y))
                 {
                     temp1 = Instantiate(world.GetObject(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
                     temp2 = Instantiate(objectTemplate, new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(Vector3.zero));
+                    if (!world.GetObject(x, y).objectType.collider)
+                        temp2.GetComponent<BoxCollider>().enabled = false;
                     temp1.transform.parent = temp2.transform;
                     temp2.GetComponent<Object>().objectObject = world.GetObject(x, y);
                     temp2.GetComponent<Object>().coordinates = new Vector2(x, y);

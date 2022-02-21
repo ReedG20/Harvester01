@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: cauldron
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: 3964492b87ed040978d30b1a238285a3, type: 2}
+  dropAmount: 01000000
+  collider: 1
   objectEfficiencyMultiplier: 0

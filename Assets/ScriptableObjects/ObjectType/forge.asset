@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: forge
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: c5e866c8cdfe54c369772d2f45054869, type: 2}
+  dropAmount: 01000000
+  collider: 1
   objectEfficiencyMultiplier: 0

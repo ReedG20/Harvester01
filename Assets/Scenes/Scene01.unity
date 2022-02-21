@@ -2956,6 +2956,7 @@ MonoBehaviour:
   world: {fileID: 11400000, guid: f248f725886b54d469ce232caaf8a301, type: 2}
   size: 100
   biomeNoiseScale: 0.0311
+  groundTemplate: {fileID: 8401335724360739363, guid: 92686433a3b8d70438860b71509b924b, type: 3}
   objectTemplate: {fileID: 723484094061519751, guid: 94da163217c128246a7f32cd93775165, type: 3}
   biomes:
   - biomeName: Forest
@@ -6843,7 +6844,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3242677, y: 1}
+    m_SensorSize: {x: 1.2866108, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: gate_wood
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: 164ba3a8f3bf34a698a28c4983a1bd15, type: 2}
+  dropAmount: 01000000
+  collider: 1
   objectEfficiencyMultiplier: 0

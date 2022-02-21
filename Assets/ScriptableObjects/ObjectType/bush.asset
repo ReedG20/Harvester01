@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: bush
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: 8adb52c87ce89364eaa2c8e446216536, type: 2}
+  - {fileID: 11400000, guid: 90ce25595842e6f47ad3e853db055746, type: 2}
+  dropAmount: 0300000002000000
+  collider: 1
   objectEfficiencyMultiplier: 0

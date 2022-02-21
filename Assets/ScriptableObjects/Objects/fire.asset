@@ -15,4 +15,4 @@ MonoBehaviour:
   name: 
   states:
   - {fileID: 0}
-  type: {fileID: 11400000, guid: 3f7389b41b6464df3910234d01401483, type: 2}
+  objectType: {fileID: 11400000, guid: 3f7389b41b6464df3910234d01401483, type: 2}

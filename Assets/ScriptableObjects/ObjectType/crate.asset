@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: crate
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: 69de5192ad4b24e66ac712fc00f8d8e2, type: 2}
+  dropAmount: 01000000
+  collider: 1
   objectEfficiencyMultiplier: 0

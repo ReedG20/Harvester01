@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: rock_rubium
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: ea8db9b7cebc44e19916937309b0e83b, type: 2}
+  dropAmount: 02000000
+  collider: 1
   objectEfficiencyMultiplier: 0

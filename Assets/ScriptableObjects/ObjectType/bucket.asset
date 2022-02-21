@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: bucket
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: 00b879daac076db41936e4345d3b620c, type: 2}
+  dropAmount: 01000000
+  collider: 1
   objectEfficiencyMultiplier: 0

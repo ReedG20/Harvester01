@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: fire
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: 7c0a75c69b2844f8fab29a9b749606b3, type: 2}
+  dropAmount: 01000000
+  collider: 1
   objectEfficiencyMultiplier: 0

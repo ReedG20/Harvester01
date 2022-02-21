@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: wall_sandstone
   m_EditorClassIdentifier: 
   typeName: 
-  dropItem: []
-  dropAmount: 
+  dropItem:
+  - {fileID: 11400000, guid: 51d483f6448954031bdc621adcb9015d, type: 2}
+  dropAmount: 01000000
+  collider: 1
   objectEfficiencyMultiplier: 0

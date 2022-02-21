@@ -15,4 +15,4 @@ MonoBehaviour:
   name: 
   states:
   - {fileID: 919132149155446097, guid: dd5b5b60fd680804690c6e3e53b70e98, type: 3}
-  type: {fileID: 11400000, guid: eb297711b0aee4c0e9eace5bbceb0585, type: 2}
+  objectType: {fileID: 0}
