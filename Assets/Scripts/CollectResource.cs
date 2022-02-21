@@ -5,6 +5,8 @@ public class CollectResource : MonoBehaviour
 {
     public InventoryObject inventory;
 
+    public WorldObject world;
+
     public InventoryUI inventoryUI;
 
     float rayLength = 2f;
@@ -33,8 +35,34 @@ public class CollectResource : MonoBehaviour
         Vector3 rayDirection = transform.rotation * Vector3.forward * rayLength;
         Debug.DrawRay(transform.position, rayDirection);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            Ray ray = new Ray(transform.position, rayDirection);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, rayLength))
+            {
+                var hitObject = hit.transform.GetComponent<Object>();
+
+                if (hitObject)
+                {
+                    if (hitObject.objectObject.objectType.dropItem.Length > 0)
+                    {
+                        for (int i = 0; i < hitObject.objectObject.objectType.dropItem.Length; i++)
+                        {
+                            inventory.AddItemToInventory(hitObject.objectObject.objectType.dropItem[i], hitObject.objectObject.objectType.dropAmount[i]);
+                        }
+                    }
+
+                    world.RemoveObject(hitObject.coordinates);
+                    // change later to be removed as a result of WorldObject changing
+                    Destroy(hitObject.gameObject);
+                    inventoryUIObject.GetComponent<InventoryUI>().UpdateUI();
+                }
+            }
+
+            // Old loading code
+            /*
             if (isLoaded)
             {
                 isLoaded = false;
@@ -47,6 +75,7 @@ public class CollectResource : MonoBehaviour
                     var hitObject = hit.transform.GetComponent<Object>();
 
                     // Efficiency
+                    
                     if (inventoryUI.GetSelectedItem() != null)
                     {
                         for (int i = 0; i < inventoryUI.GetSelectedItem().efficiencyTargetObjects.Length; i++)
@@ -64,6 +93,7 @@ public class CollectResource : MonoBehaviour
                         }
                         
                     }
+                    
                     
                     if (hitObject)
                     {
@@ -83,10 +113,13 @@ public class CollectResource : MonoBehaviour
                     }
                 }
             }
+            
+            
             else if (!runningCoroutine)
             {
                 StartCoroutine(Tick());
             }
+            //*/
         }
 
         //SFX
@@ -98,6 +131,7 @@ public class CollectResource : MonoBehaviour
         */
 
         // Debugging
+        /*
         if (Input.GetKeyDown(KeyCode.D))
         {
             for (int i = 0; i < debugItems.Length; i++)
@@ -105,8 +139,10 @@ public class CollectResource : MonoBehaviour
                 inventory.AddItemToInventory(debugItems[i], debugAmounts[i]);
             }
         }
+        */
     }
 
+    /*
     IEnumerator Tick()
     {
         runningCoroutine = true;
@@ -116,6 +152,7 @@ public class CollectResource : MonoBehaviour
         isLoaded = true;
         runningCoroutine = false;
     }
+    */
 
     private void OnApplicationQuit()
     {

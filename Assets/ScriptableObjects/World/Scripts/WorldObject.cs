@@ -22,6 +22,18 @@ public class WorldObject : ScriptableObject
         worldObject.Add(vector2, objectObject);
     }
 
+    // Remove
+
+    public void RemoveGround(Vector2 vector2)
+    {
+        worldGround.Remove(vector2);
+    }
+    
+    public void RemoveObject(Vector2 vector2)
+    {
+        worldObject.Remove(vector2);
+    }
+
     // Change
 
     public void ChangeGround(Vector2 vector2, ObjectObject objectObject)

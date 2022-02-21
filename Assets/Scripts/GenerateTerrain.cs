@@ -15,6 +15,8 @@ public class GenerateTerrain : MonoBehaviour
     // Higher = more detail (default: 5f)
     public float biomeNoiseScale;
 
+    public GameObject objectTemplate;
+
     int _x;
     int _y;
 
@@ -113,11 +115,15 @@ public class GenerateTerrain : MonoBehaviour
                     if (Random.Range(0f, 1f) >= biomes[biome].biomeElements[i].randomCutoff)
                     {
                         if (biomes[biome].biomeElements[i].hasCustomRotation)
+                        {
                             world.AddObject(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(biomes[biome].biomeElements[i].customRotation));
+                        }
                         else
+                        {
                             world.AddObject(new Vector2(_x, _y), biomes[biome].biomeElements[i].objectObject);
                             //Instantiate(biomes[biome].biomeElements[i].prefab, new Vector3((_x - (size / 2)) * scale, 0f, (_y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                        }
                         break;
                         Debug.Log("Adding " + biomes[biome].biomeElements[i].objectObject.states[0].name + " at position " + _x + ", " + _y + " in the " + biomes[biome].biomeName + " biome");
                     }
@@ -138,12 +144,23 @@ public class GenerateTerrain : MonoBehaviour
         {
             for (int y = 0; y < world.GetGroundDictionaryLength(); y++)
             {
+                GameObject temp1;
+                GameObject temp2;
                 // TEMPORARY
                 if (world.ValueAtKeyGround(x, y))
+                {
                     Instantiate(world.GetGround(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                }
 
                 if (world.ValueAtKeyObject(x, y))
-                    Instantiate(world.GetObject(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                {
+                    temp1 = Instantiate(world.GetObject(x, y).states[0], new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(defaultRotation));
+                    temp2 = Instantiate(objectTemplate, new Vector3((x - (size / 2)) * scale, 0f, (y - (size / 2)) * scale), Quaternion.Euler(Vector3.zero));
+                    temp1.transform.parent = temp2.transform;
+                    temp2.GetComponent<Object>().objectObject = world.GetObject(x, y);
+                    temp2.GetComponent<Object>().coordinates = new Vector2(x, y);
+                    temp2.name = temp1.name;
+                }
             }
         }
         //*/

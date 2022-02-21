@@ -9,6 +9,12 @@ public class Object : MonoBehaviour
 
     public ObjectObject objectObject;
 
+    public Vector2 coordinates;
+
+
+    // OLD
+    [Header("Need to change: ")]
+
     GameObject lastObject;
 
     public bool isBroken;

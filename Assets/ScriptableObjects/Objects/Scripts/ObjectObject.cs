@@ -8,7 +8,7 @@ public class ObjectObject : ScriptableObject
     // Prefabs
     public GameObject[] states;
 
-    public ObjectTypeObject type; // e.g., ObjectType("Tree")
+    public ObjectTypeObject objectType; // e.g., ObjectType("Tree")
 
     public int CompareTo(object a)
     {
