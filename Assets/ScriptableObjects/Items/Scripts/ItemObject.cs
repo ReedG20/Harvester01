@@ -13,6 +13,12 @@ public class ItemObject : ScriptableObject, IComparable
     public int craftOutput = 1;
     public ItemObject[] ingredients;
     public int[] ingredientCount;
+    // Place
+    [Space]
+    [Header("Place")]
+    public bool isPlaceable;
+    public ObjectObject objectObject;
+    //*
     // Efficiency
     [Space]
     [Header("Make Efficient")]
@@ -29,11 +35,6 @@ public class ItemObject : ScriptableObject, IComparable
     [Header("Heal")]
     public bool restoresHealth;
     public float health;
-    // Place
-    [Space]
-    [Header("Place")]
-    public bool isPlaceable;
-    public GameObject objectPrefab;
     // Harvest
     [Space]
     [Header("Harvest")]
@@ -54,6 +55,7 @@ public class ItemObject : ScriptableObject, IComparable
     [Header("Cook")]
     public bool isCookable;
     public float secondsUntilCooked;
+    //*/
 
     public int CompareTo(object a)
     {

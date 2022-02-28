@@ -48,14 +48,14 @@ public class WorldObject : ScriptableObject
 
     // Get
 
-    public ObjectObject GetGround(int x, int y)
+    public ObjectObject GetGround(Vector2 coordinates)
     {
-        return worldGround[new Vector2(x, y)];
+        return worldGround[coordinates];
     }
 
-    public ObjectObject GetObject(int x, int y)
+    public ObjectObject GetObject(Vector2 coordinates)
     {
-        return worldObject[new Vector2(x, y)];
+        return worldObject[coordinates];
     }
 
     // Get Dictionary Length
@@ -72,13 +72,13 @@ public class WorldObject : ScriptableObject
 
     // Value at Key
 
-    public bool ValueAtKeyGround(int x, int y)
+    public bool ValueAtKeyGround(Vector2 coordinates)
     {
-        return worldGround.TryGetValue(new Vector2(x, y), out _);
+        return worldGround.TryGetValue(new Vector2(coordinates.x, coordinates.y), out _);
     }
 
-    public bool ValueAtKeyObject(int x, int y)
+    public bool ValueAtKeyObject(Vector2 coordinates)
     {
-        return worldObject.TryGetValue(new Vector2(x, y), out _);
+        return worldObject.TryGetValue(new Vector2(coordinates.x, coordinates.y), out _);
     }
 }

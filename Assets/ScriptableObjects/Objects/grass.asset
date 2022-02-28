@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0959725acd0e14abea3dec76b4bdce87, type: 3}
   m_Name: grass
   m_EditorClassIdentifier: 
-  name: 
+  name: grass
   states:
   - {fileID: 919132149155446097, guid: 23094cf29001e7944b64f7642bfcc70a, type: 3}
   objectType: {fileID: 11400000, guid: 1d55915c387bd4ed8b27efab30b5a035, type: 2}

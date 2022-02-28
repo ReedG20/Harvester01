@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028575, g: 0.22571608, b: 0.30692452, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028533, g: 0.22571526, b: 0.3069237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2954,6 +2954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   world: {fileID: 11400000, guid: f248f725886b54d469ce232caaf8a301, type: 2}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  scale: 2
   size: 100
   biomeNoiseScale: 0.0311
   groundTemplate: {fileID: 8401335724360739363, guid: 92686433a3b8d70438860b71509b924b, type: 3}
@@ -5346,7 +5348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209440306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -6275,6 +6277,8 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 7a95fc4a47ac4ed4680e8e10e2833f89, type: 2}
   inventoryUI: {fileID: 1176636247}
   ray02Transform: {fileID: 399914615}
+  world: {fileID: 11400000, guid: f248f725886b54d469ce232caaf8a301, type: 2}
+  terrainScript: {fileID: 560155929}
 --- !u!1001 &1312566654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6844,7 +6848,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2866108, y: 1}
+    m_SensorSize: {x: 0.82608694, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

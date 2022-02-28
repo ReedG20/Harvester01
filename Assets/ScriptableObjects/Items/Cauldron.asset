@@ -19,6 +19,8 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 8226f04e10b3c1f4bab414acfd77418b, type: 2}
   ingredientCount: 01000000
+  isPlaceable: 1
+  objectObject: {fileID: 11400000, guid: e742d434a878147009875ccd416ae8a1, type: 2}
   isEfficient: 0
   efficiencyTargetObjects: []
   toolEfficiencyMultiplier: 0
@@ -26,8 +28,6 @@ MonoBehaviour:
   damage: 0
   restoresHealth: 0
   health: 0
-  isPlaceable: 1
-  objectPrefab: {fileID: 1883497659748274171, guid: 877ad93ca47f9874f8cb010bedfc73c7, type: 3}
   canHarvest: 0
   harvestTargetObjects: 
   harvestedItem: 

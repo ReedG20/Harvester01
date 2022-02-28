@@ -12,50 +12,65 @@ public class Place : MonoBehaviour
 
     public Transform ray02Transform;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public WorldObject world;
+
+    public GenerateTerrain terrainScript;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (inventoryUI.GetSelectedItem().isPlaceable)
+            if (inventoryUI.GetSelectedItem() != null)
             {
-                PlaceObject();
+                if (inventoryUI.GetSelectedItem().isPlaceable)
+                {
+                    PlaceObject();
+                }
             }
         }
     }
 
     public void PlaceObject()
     {
-        Debug.Log("PlaceObject called");
-
         Vector3 rayDirection01 = transform.rotation * Vector3.forward * rayLength;
         Debug.DrawRay(transform.position, rayDirection01);
 
         Ray ray01 = new Ray(transform.position, rayDirection01);
-        RaycastHit hit01;
 
-        if (!Physics.Raycast(ray01, out hit01, rayLength))
+        if (!Physics.Raycast(ray01, out _, rayLength))
         {
-            Debug.Log("No object detected in front of player");
+            // No object detected in front of player
 
             Vector3 rayDirection02 = ray02Transform.rotation * Vector3.down * rayLength;
             Debug.DrawRay(ray02Transform.position, rayDirection02);
 
             Ray ray02 = new Ray(ray02Transform.position, rayDirection02);
             RaycastHit hit02;
+
             if (Physics.Raycast(ray02, out hit02, rayLength))
             {
-                Debug.Log("Found ground tile");
+                // Found ground tile
 
-                //var hitObject = hit02.transform.GetComponent<Object>();
+                if (hit02.transform.GetComponent<Object>().coordinates.x % 1 == 0 && hit02.transform.GetComponent<Object>().coordinates.y % 1 == 0)
+                {
+                    // Ready to place
 
-                Instantiate(inventoryUI.GetSelectedItem().objectPrefab, hit02.transform.position, hit02.transform.rotation);
+                    if (world.ValueAtKeyObject(hit02.transform.GetComponent<Object>().coordinates) && !world.GetObject(hit02.transform.GetComponent<Object>().coordinates).objectType.collider)
+                    {
+                        // There is an object without a collider (grass)
+                        // remove grass
+                        world.RemoveObject(hit02.transform.GetComponent<Object>().coordinates);
+                        // Need to figure out a way to destroy an object from the WorldObject
+                        //Destroy(world.GetObject(hit02.transform.GetComponent<Object>().coordinates).objectType.collider);
+                    }
+
+                    // Then add object to world
+                    world.AddObject(hit02.transform.GetComponent<Object>().coordinates, inventoryUI.GetSelectedItem().objectObject);
+                    inventory.AddItemToHotbarAt(inventoryUI.selectedHotbarSlot, inventoryUI.GetSelectedItem(), -1);
+                    inventoryUI.UpdateUI();
+                    terrainScript.InstantiateObjectTile(new Vector2(hit02.transform.GetComponent<Object>().coordinates.x, hit02.transform.GetComponent<Object>().coordinates.y));
+                }
             }
         }
     }

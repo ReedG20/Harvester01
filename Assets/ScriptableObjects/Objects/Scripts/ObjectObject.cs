@@ -16,5 +16,3 @@ public class ObjectObject : ScriptableObject
         return other.name.CompareTo(this.name);
     }
 }
-
-//[CreateAssetMenu(fileName = "New Object", menuName = "Object System/Object")]
